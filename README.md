@@ -23,4 +23,5 @@ Things you may want to cover:
 
 * ...
 
-*André alterou
+*Andrï¿½ alterou
+* Oi seus bunito! O AndrÃ©s 100sual passou por aqui.
