@@ -1,0 +1,2 @@
+module AdministratorHasStudentsHelper
+end

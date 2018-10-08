@@ -1,0 +1,2 @@
+class AdministratorHasStudentsController < ApplicationController
+end

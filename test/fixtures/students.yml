@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  birth_date: 2018-10-08
+  cpf: MyString
+  phone: MyString
+  cell_phone: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  scholarship: 1
+  scholarship_need: 1
+  situation: 1
+  email: MyString
+  username: MyString
+  password: MyString
+
+two:
+  name: MyString
+  birth_date: 2018-10-08
+  cpf: MyString
+  phone: MyString
+  cell_phone: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  scholarship: 1
+  scholarship_need: 1
+  situation: 1
+  email: MyString
+  username: MyString
+  password: MyString

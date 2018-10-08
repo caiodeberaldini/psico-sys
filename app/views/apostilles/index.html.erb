@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Apostilles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apostilles.each do |apostille| %>
+      <tr>
+        <td><%= apostille.description %></td>
+        <td><%= link_to 'Show', apostille %></td>
+        <td><%= link_to 'Edit', edit_apostille_path(apostille) %></td>
+        <td><%= link_to 'Destroy', apostille, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Apostille', new_apostille_path %>

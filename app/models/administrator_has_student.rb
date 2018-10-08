@@ -1,0 +1,2 @@
+class AdministratorHasStudent < ApplicationRecord
+end
