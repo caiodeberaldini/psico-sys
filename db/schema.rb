@@ -10,85 +10,78 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181008192127) do
-
-  create_table "administrator_has_students", force: :cascade do |t|
-    t.integer "administrator_id"
-    t.integer "student_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "administrator_has_teachers", force: :cascade do |t|
-    t.integer "administrator_id"
-    t.integer "teacher_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20181026162907) do
 
   create_table "administrators", force: :cascade do |t|
-    t.string "email"
-    t.string "username"
-    t.string "password"
+    t.string "email", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "apostilles", force: :cascade do |t|
-    t.string "description"
+    t.string "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "subjects_id"
+    t.index ["subjects_id"], name: "index_apostilles_on_subjects_id"
   end
 
   create_table "materials", force: :cascade do |t|
-    t.string "description"
-    t.integer "subject_id"
+    t.string "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "subjects_id"
+    t.index ["subjects_id"], name: "index_materials_on_subjects_id"
   end
 
   create_table "students", force: :cascade do |t|
-    t.string "name"
-    t.date "birth_date"
-    t.string "cpf"
+    t.string "name", null: false
+    t.date "birth_date", null: false
+    t.string "cpf", null: false
     t.string "phone"
-    t.string "cell_phone"
-    t.string "address"
-    t.string "city"
-    t.string "state"
-    t.integer "scholarship"
-    t.integer "scholarship_need"
-    t.integer "situation"
-    t.string "email"
-    t.string "username"
-    t.string "password"
-    t.string "class"
+    t.string "cell_phone", null: false
+    t.string "address", null: false
+    t.string "city", null: false
+    t.string "state", null: false
+    t.integer "scholarship", null: false
+    t.integer "scholarship_need", null: false
+    t.integer "situation", null: false
+    t.string "email", null: false
+    t.string "classe", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "subjects", force: :cascade do |t|
-    t.string "name"
-    t.integer "apostille_id"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "teachers", force: :cascade do |t|
-    t.string "name"
-    t.date "birth_date"
-    t.string "cpf"
-    t.string "address"
-    t.string "city"
-    t.string "state"
+    t.string "name", null: false
+    t.date "birth_date", null: false
+    t.string "cpf", null: false
+    t.string "address", null: false
+    t.string "city", null: false
+    t.string "state", null: false
     t.string "phone"
-    t.string "cell_phone"
-    t.string "field"
-    t.string "email"
-    t.string "username"
-    t.integer "subject_id"
+    t.string "cell_phone", null: false
+    t.string "disciplina", null: false
+    t.string "email", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username", null: false
+    t.string "password_digest", null: false
+    t.integer "papel", default: 0, null: false
+    t.string "role_type"
+    t.integer "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["role_type", "role_id"], name: "index_users_on_role_type_and_role_id"
   end
 
 end

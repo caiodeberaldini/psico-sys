@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+    <strong>Nome</strong>
+    <%= @student.name %>
+</p>
+
+<p>
+    <strong>Data de Nascimento</strong>
+    <%= @student.birth_date %>
+</p>
+
+<p>
+    <strong>CPF</strong>
+    <%= @student.cpf %>
+</p>
+
+<p>
+    <strong>Telefone</strong>
+    <%= @student.phone %>
+</p>
+
+<p>
+    <strong>Celular</strong>
+    <%= @student.cell_phone %>
+</p>
+
+<p>
+    <strong>Endereço</strong>
+    <%= @student.address %>
+</p>
+
+<p>
+    <strong>Cidade</strong>
+    <%= @student.city %>
+</p>
+
+<p>
+    <strong>State</strong>
+    <%= @student.state %>
+</p>
+
+<p>
+    <strong>Bolsa de Estudos</strong>
+    <%= @student.scholarship %>
+</p>
+
+<p>
+    <strong>Necessidade de Bolsa de Estudos</strong>
+    <%= @student.scholarship_need %>
+</p>
+
+<p>
+    <strong>Situação</strong>
+    <%= @student.situation %>
+</p>
+
+<p>
+    <strong>E-Mail</strong>
+    <%= @student.email %>
+</p>
+
+<p>
+    <strong>Classe</strong>
+    <%= @student.classe %>
+</p>
+
+<%= render partial: "users/user", locals: {role: @student} %>
+

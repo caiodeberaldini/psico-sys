@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+    <strong>Nome</strong>
+    <%= @teacher.name %>
+</p>
+
+<p>
+    <strong>Data de Nascimento</strong>
+    <%= @teacher.birth_date %>
+</p>
+
+<p>
+    <strong>CPF</strong>
+    <%= @teacher.cpf %>
+</p>
+
+<p>
+    <strong>Telefone</strong>
+    <%= @teacher.phone %>
+</p>
+
+<p>
+    <strong>Celular</strong>
+    <%= @teacher.cell_phone %>
+</p>
+
+<p>
+    <strong>Endereço</strong>
+    <%= @teacher.address %>
+</p>
+
+<p>
+    <strong>Cidade</strong>
+    <%= @teacher.city %>
+</p>
+
+<p>
+    <strong>State</strong>
+    <%= @teacher.state %>
+</p>
+
+<p>
+    <strong>E-Mail</strong>
+    <%= @teacher.email %>
+</p>
+
+<p>
+    <strong>Área de Atuação</strong>
+    <%= @teacher.disciplina %>
+</p>
+
+<%= render partial: "users/user", locals: {role: @teacher} %>
+
