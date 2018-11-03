@@ -1,5 +1,16 @@
 <h3>Página dos Administradores do Cursinho Psicologia</h3>
 
-<p>
-    <%= link_to "Sign Up", new_administrator_path %>
-</p>
+<table>
+    <tbody>
+        <tr>
+            <th>E-Mail</th>
+        </tr>
+        <% @administrators.each do |administrator|  %>
+            <tr>
+                <td><%= administrator.email %></td>
+                <td><%= link_to "Editar", edit_administrator_url(administrator) %></td>
+                <td><%= link_to "Deletar", administrator, method: :delete, data: {confirm: "Tem certeza?"} %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

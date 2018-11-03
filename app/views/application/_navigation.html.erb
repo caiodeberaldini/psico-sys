@@ -1,8 +1,7 @@
-<p>
-    <%= link_to "Students", students_path %>
-    <%= link_to "Teachers", teachers_path %>
-    <%= link_to "Administrators", administrators_path %>
-    <%= link_to "Log In", new_session_path %>
-</p>
+<h3>Bem-Vindo ao Cursinho da Psicologia - USP</h3>
 
-<hr>
+<% if current_user.nil? %>
+    <p>
+        <%= button_to "Log In", new_session_path, class: "btn btn-primary", method: :get %>
+    </p>
+<% end %>

@@ -1,5 +1,20 @@
 <h3>Página dos Professores do Cursinho Psicologia</h3>
 
-<p>
-    <%= link_to "Sign Up", new_teacher_path %>
-</p>
+<table>
+    <tbody>
+        <tr>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Disciplina</th>
+        </tr>
+        <% @teachers.each do |teacher|  %>
+            <tr>
+                <td><%= teacher.name %></td>
+                <td><%= teacher.address %></td>
+                <td><%= teacher.disciplina %></td>
+                <td><%= link_to "Editar", edit_teacher_url(teacher) %></td>
+                <td><%= link_to "Deletar", teacher, method: :delete, data: {confirm: "Tem certeza?"} %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

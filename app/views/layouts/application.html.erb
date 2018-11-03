@@ -9,15 +9,24 @@
   </head>
 
   <body>
-    <%= yield %>
-    
     <p>
-      <%= link_to "Students", students_path %>
+      <!--<%= link_to "Students", students_path %>
       <%= link_to "Teachers", teachers_path %>
-      <%= link_to "Administrators", administrators_path %>
-      <%= link_to "Log In", new_session_path %>
+      <%= link_to "Administrators", administrators_path %> -->
+
+      <% if current_user %>
+        Olá! <%= current_user.username %>
+        <%= link_to "Log Out", logout_path %>
+        <% if current_user.papel == 2  %>
+          <%= link_to "Cadastrar Aluno", signup_students_path %>
+          <%= link_to "Cadastrar Professor", signup_teachers_path %>
+          <%= link_to "Cadastrar Administrador", signup_administrators_path %>
+        <% end %>
+      <% end %>
     </p>
 
     <hr>
+    
+    <%= yield %>
   </body>
 </html>

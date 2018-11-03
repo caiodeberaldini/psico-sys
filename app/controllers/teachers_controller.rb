@@ -1,5 +1,7 @@
 class TeachersController < ApplicationController
     before_action :set_teacher, only: [:show, :edit, :update, :destroy]
+    before_action :authorize
+    before_action :isAdmin, only: [:index, :show, :new, :edit, :create, :update, :destroy]
 
   # GET /teachers
   # GET /teachers.json
@@ -20,6 +22,7 @@ class TeachersController < ApplicationController
 
   # GET /teachers/1/edit
   def edit
+    render :edit
   end
 
   # POST /teachers

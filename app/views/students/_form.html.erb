@@ -1,0 +1,82 @@
+<%= form_with(model: student, local: true) do |form| %>
+    <% if student.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+        <ul>
+        <% student.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+        </ul>
+    </div>
+    <% end %>
+
+    <div class=field>
+        <%= form.label :name %><br />
+        <%= form.text_field :name %>
+    </div>
+
+    <div class=field>
+        <%= form.label :birth_date %><br />
+        <%= form.date_field :birth_date %>
+    </div>
+
+    <div class=field>
+        <%= form.label :cpf %><br />
+        <%= form.text_field :cpf %>
+    </div>
+
+    <div class=field>
+        <%= form.label :phone %><br />
+        <%= form.text_field :phone %>
+    </div>
+
+    <div class=field>
+        <%= form.label :cell_phone %><br />
+        <%= form.text_field :cell_phone %>
+    </div>
+
+    <div class=field>
+        <%= form.label :address %><br />
+        <%= form.text_field :address %>
+    </div>
+
+    <div class=field>
+        <%= form.label :city %><br />
+        <%= form.text_field :city %>
+    </div>
+
+    <div class=field>
+        <%= form.label :state %><br />
+        <%= form.text_field :state %>
+    </div>
+
+    <div class=field>
+        <%= form.label :scholarship %><br />
+        <%= form.number_field :scholarship %>
+    </div>
+
+    <div class=field>
+        <%= form.label :scholarship_need %><br />
+        <%= form.number_field :scholarship_need %>
+    </div>
+
+    <div class=field>
+        <%= form.label :situation %><br />
+        <%= form.number_field :situation %>
+    </div>
+
+    <div class=field>
+        <%= form.label :email %><br />
+        <%= form.text_field :email %>
+    </div>
+
+    <div class=field>
+        <%= form.label :classe %><br />
+        <%= form.text_field :classe %>
+    </div>
+
+    <div class="actions">
+        <%= form.submit class: "btn btn-primary" %>
+    </div>
+<% end %>
