@@ -1,0 +1,18 @@
+<p>
+    <hr>
+    <h5>Usuário</h5>   
+    <%= role.users[0].username %>
+</p>
+
+<p>
+    <hr>
+    <h5>Papel</h5>
+    <% if role.users[0].papel == 0 %>
+        <p>Estudante</p>
+    <% elsif role.users[0].papel == 1 %>
+        <p>Professor</p>
+    <% elsif role.users[0].papel == 2 %>
+        <p>Administrador</p>
+    <% end %>
+</p>
+

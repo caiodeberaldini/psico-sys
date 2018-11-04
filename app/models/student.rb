@@ -1,3 +1,3 @@
 class Student < ApplicationRecord
-    has_and_belongs_to_many :administrators
+    has_many :users, as: :role, dependent: :destroy
 end
