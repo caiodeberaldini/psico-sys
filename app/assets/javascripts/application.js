@@ -24,3 +24,16 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems);
   });
+  
+document.addEventListener('turbolinks:load', function() {
+    elem = document.querySelector('.sidenav');
+    instance = new M.Sidenav(elem, {});
+});
+
+document.addEventListener('turbolinks:before-visit', function() {
+    elem = document.querySelector('.sidenav');
+    instance = M.Sidenav.getInstance(elem);
+    if (instance){
+      instance.destroy();
+    }
+});

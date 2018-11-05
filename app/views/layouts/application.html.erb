@@ -9,23 +9,40 @@
   </head>
 
   <body>
-    <p>
-      <!--<%= link_to "Students", students_path %>
-      <%= link_to "Teachers", teachers_path %>
-      <%= link_to "Administrators", administrators_path %> -->
+    <nav class="green">
+      <div class="nav-wrapper">
+          <span class="brand-logo center">Cursinho da Psico</span>
+          <a data-target="slide-out" class="btn-floating btn-flat sidenav-trigger show-on-large">
+              <i class="material-icons">menu</i>
+          </a>
 
-      <% if current_user %>
-        Olá! <%= current_user.username %>
-        <%= link_to "Log Out", logout_path %>
-        <% if current_user.papel == 2  %>
-          <%= link_to "Cadastrar Aluno", signup_students_path %>
-          <%= link_to "Cadastrar Professor", signup_teachers_path %>
-          <%= link_to "Cadastrar Administrador", signup_administrators_path %>
+          <ul class="right hide-on-med-and-down">
+              <li><a href="home" style="font-weight: bold;">Home</a></li>
+              <li><a href="" style="font-weight: bold;">Quem Somos</a></li>
+              <li><a href="" style="font-weight: bold;">Projeto</a></li>
+              <li><a href="" style="font-weight: bold;">Contatos</a></li>
+          </ul>
+      </div>
+    </nav>
+
+    <ul id="slide-out" class="sidenav">
+        <li><a href="">Disciplinas</a></li>
+        <li><a href="">Materiais</a></li>
+        <% if !current_user.nil?  %>
+            <li><a href="">Apostilas</a></li>
+            <% if current_user.papel == 2  %>
+              <hr>
+              <li><a href="signup_students">Cadastrar Aluno</a></li>
+              <li><a href="signup_teachers">Cadastrar Professor</a></li>
+              <li><a href="signup_administrators">Cadastrar Administrador</a></li>
+            <% end %>
+            <hr>
+            <li><a href="logout">Sair</a></li>
+        <% else %>
+            <hr>
+            <li><a href="login">Entrar</a></li>
         <% end %>
-      <% end %>
-    </p>
-
-    <hr>
+    </ul>
     
     <%= yield %>
   </body>
