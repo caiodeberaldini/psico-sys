@@ -4,6 +4,36 @@ Rails.application.routes.draw do
   get "signup_students", to: "students#new", as: "signup_students"
   get "signup_teachers", to: "teachers#new", as: "signup_teachers"
   get "signup_administrators", to: "administrators#new", as: "signup_administrators"
+
+  get 'cursinho/index'
+
+  get'cursinho/trabalheconosco'
+
+  get'subjects/matematica'
+
+  get'subjects/fisica'
+
+  get'subjects/quimica'
+
+  get'subjects/historia'
+
+  get'subjects/geografia'
+
+  get'subjects/filosofia'
+
+  get'subjects/sociologia'
+
+  get'subjects/linguas'
+
+  get'subjects/ingles'
+
+  get'subjects/biologia'
+
+  get'sobre/quemsomos'
+
+  get'sobre/sobrenos'
+
+ 
   
   resources :sessions
   
