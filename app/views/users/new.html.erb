@@ -1,4 +1,18 @@
 <%= form_with(model: [@role, User.new], local: true) do |form| %>
+
+    <!-- nao sei pq mas esse trecho do if n ta renderizando quando da erro! -->
+    <% if @role.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@role.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+            <ul>
+            <% @role.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
+
     <div class="field">
         <%= form.label :username %><br/>
         <%= form.text_field :username %>

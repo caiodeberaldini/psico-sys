@@ -5,7 +5,9 @@ class UsersController < ApplicationController
 
     def create
         @user = @role.users.new(user_params)
-        redirect_to @role, notice: "Usuário registrado com sucesso!"
+        if @role.errors.any?
+            redirect_to @role, notice: "Usuário registrado com sucesso!"
+        end
     end
 
     private
