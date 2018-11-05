@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PsicoSys</title>
+    <title>Prot</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,41 +9,6 @@
   </head>
 
   <body>
-    <nav class="green">
-      <div class="nav-wrapper">
-          <span class="brand-logo center">Cursinho da Psico</span>
-          <a data-target="slide-out" class="btn-floating btn-flat sidenav-trigger show-on-large">
-              <i class="material-icons">menu</i>
-          </a>
-
-          <ul class="right hide-on-med-and-down">
-              <li><a href="home" style="font-weight: bold;">Home</a></li>
-              <li><a href="" style="font-weight: bold;">Quem Somos</a></li>
-              <li><a href="" style="font-weight: bold;">Projeto</a></li>
-              <li><a href="" style="font-weight: bold;">Contatos</a></li>
-          </ul>
-      </div>
-    </nav>
-
-    <ul id="slide-out" class="sidenav">
-        <li><a href="">Disciplinas</a></li>
-        <li><a href="">Materiais</a></li>
-        <% if !current_user.nil?  %>
-            <li><a href="">Apostilas</a></li>
-            <% if current_user.papel == 2  %>
-              <hr>
-              <li><a href="signup_students">Cadastrar Aluno</a></li>
-              <li><a href="signup_teachers">Cadastrar Professor</a></li>
-              <li><a href="signup_administrators">Cadastrar Administrador</a></li>
-            <% end %>
-            <hr>
-            <li><a href="logout">Sair</a></li>
-        <% else %>
-            <hr>
-            <li><a href="login">Entrar</a></li>
-        <% end %>
-    </ul>
-    
     <%= yield %>
   </body>
 </html>
