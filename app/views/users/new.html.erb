@@ -1,12 +1,13 @@
 <%= form_with(model: [@role, User.new], local: true) do |form| %>
 
-    <!-- nao sei pq mas esse trecho do if n ta renderizando quando da erro! -->
-    <% if @role.errors.any? %>
+    <% if @user.errors.any? %>
         <div id="error_explanation">
-            <h2><%= pluralize(@role.errors.count, "error") %> prohibited this user from being saved:</h2>
-
+            <!-- A seguinte linha foi extraída e adaptada do trabalho do lab de SI, mas para
+            o nosso trabalho acho que não faz sentido usar
+            <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+            -->
             <ul>
-            <% @role.errors.full_messages.each do |message| %>
+            <% @user.errors.full_messages.each do |message| %>
                 <li><%= message %></li>
             <% end %>
             </ul>

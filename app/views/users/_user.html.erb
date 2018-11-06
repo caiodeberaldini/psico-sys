@@ -3,6 +3,8 @@
     <h5>Usuário</h5> 
     <% if role.users[0] %>  
         <%= role.users[0].username %>
+    <% else %>
+    <p>None</p>
     <% end %>
 </p>
 
@@ -17,6 +19,8 @@
         <% elsif role.users[0].papel == 2 %>
             <p>Administrador</p>
         <% end %>
+    <% else %>
+    <p>None</p>
     <%end%>
 </p>
 
