@@ -58,10 +58,14 @@ class AdministratorsController < ApplicationController
   # DELETE /administrators/1
   # DELETE /administrators/1.json
   def destroy
-    @administrator.destroy
-    respond_to do |format|
-      format.html { redirect_to administrators_url, notice: 'Administrator was successfully destroyed.' }
-      format.json { head :no_content }
+    if @administrator != @current_user.role
+      @administrator.destroy
+      respond_to do |format|
+        format.html { redirect_to administrators_url, notice: 'Administrator was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else 
+      redirect_to @administrator, notice: 'Não é possível apagar você mesmo!'
     end
   end
 
