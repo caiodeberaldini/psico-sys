@@ -1,6 +1,7 @@
 class ApostillesController < ApplicationController
   before_action :set_apostille, only: [:show, :edit, :update, :destroy]
-  before_action :authorize, only: [:edit, :update, :destroy]
+  before_action :authorize
+  before_action :isAdmin, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /apostilles
   # GET /apostilles.json

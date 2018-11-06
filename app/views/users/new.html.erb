@@ -2,15 +2,7 @@
 
     <% if @user.errors.any? %>
         <div id="error_explanation">
-            <!-- A seguinte linha foi extraída e adaptada do trabalho do lab de SI, mas para
-            o nosso trabalho acho que não faz sentido usar
-            <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-            -->
-            <ul>
-            <% @user.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-            </ul>
+        <span style="color: #FF0000; font-weight: bold;"> Username já existente! </span>    
         </div>
     <% end %>
 
