@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get "login", to: "sessions#new", as: "login"
   get "logout", to: "sessions#destroy", as: "logout"
+  
   get "signup_students", to: "students#new", as: "signup_students"
   get "signup_teachers", to: "teachers#new", as: "signup_teachers"
   get "signup_administrators", to: "administrators#new", as: "signup_administrators"
@@ -44,7 +45,7 @@ Rails.application.routes.draw do
 
   resources :subjects
 
-  root to: "application#_navigation"
+  root to: "cursinho#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
