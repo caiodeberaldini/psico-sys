@@ -20,10 +20,12 @@
           <li><a href="" class="hide-on-med-and-down" style="font-weight: bold;">Apoios Psicológico</a></li>
           <li><a href="trabalheconosco" class="hide-on-med-and-down" style="font-weight: bold;">Trabalhe Conosco</a></li>
           <li><a href="" class="hide-on-med-and-down" style="font-weight: bold;">Contato</a></li>
+        </ul>
+        <ul id="nav-mobile" class="right">        
           <% if current_user.nil? %>
-            <li><a href="login" class="hide-on-med-and-down waves-effect orange accent-3 btn-large" style="margin-top: -5px; margin-left: 510px;">Entrar</a></li>
+            <li><a href="login" class="hide-on-med-and-down waves-effect orange accent-3 btn-large">Entrar</a></li>
           <% else %>
-            <li><a href="logout" class="hide-on-med-and-down waves-effect orange accent-3 btn-large" style="margin-top: -5px; margin-left: 510px;">Sair</a></li>
+            <li><a href="logout" class="hide-on-med-and-down waves-effect orange accent-3 btn-large">Sair</a></li>
           <% end %>
         </ul>
       </div>
