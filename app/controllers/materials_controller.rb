@@ -26,6 +26,7 @@ class MaterialsController < ApplicationController
   # POST /materials.json
   def create
     @material = Material.new(material_params)
+    uploaded_file(params[:material][:attachment])
 
     respond_to do |format|
       if @material.save
@@ -62,6 +63,12 @@ class MaterialsController < ApplicationController
     end
   end
 
+  def download
+    item = Material.find(params[:id])
+    
+    send_data item.data, filename: item.filename, type: item.content_type, disposition: 'attachment'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_material
@@ -70,6 +77,16 @@ class MaterialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def material_params
-      params.require(:material).permit(:description, :subject_id)
+      params.require(:material).permit(:description, :subjects_id, :tipo)
+    end
+
+    def uploaded_file(incoming_file)
+      @material.filename = incoming_file.original_filename
+      @material.content_type = incoming_file.content_type
+      @material.data = incoming_file.read
+    end
+  
+    def filename(new_filename)
+      write_attribute("filename", sanitize_filename(new_filename))
     end
 end

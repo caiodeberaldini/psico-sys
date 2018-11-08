@@ -5,5 +5,26 @@
   <%= @apostille.description %>
 </p>
 
+<p>
+  <strong>Matéria:</strong>
+  <%= Subject.find(@apostille.subjects_id).name %>
+</p>
+
+<p>
+  <strong>Filename:</strong>
+  <%= @apostille.filename %>
+</p>
+
+<p>
+  <strong>Content Type:</strong>
+  <%= @apostille.content_type %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= link_to 'Download', apostille_download_path(@apostille), disable_with: 'Downloading...'  %>
+</p>
+
+
 <%= link_to 'Edit', edit_apostille_path(@apostille) %> |
 <%= link_to 'Back', apostilles_path %>

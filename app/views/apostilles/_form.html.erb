@@ -1,4 +1,4 @@
-<%= form_with(model: apostille, local: true) do |form| %>
+<%= form_with(model: apostille, local: true, multipart: true) do |form| %>
   <% if apostille.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(apostille.errors.count, "error") %> prohibited this apostille from being saved:</h2>
@@ -18,7 +18,12 @@
 
   <div class="field">
     <%= form.label :subject_id %>
-    <%= form.number_field :subject_id, id: :material_subject_id %>
+    <%= form.number_field :subjects_id, id: :appostile_subjects_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arquivo %>
+    <%= form.file_field :attachment %>
   </div>
 
   <div class="actions">
