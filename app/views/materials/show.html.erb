@@ -1,13 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrição:</strong>
   <%= @material.description %>
 </p>
 
 <p>
-  <strong>Subject:</strong>
-  <%= @material.subject_id %>
+  <strong>Matéria:</strong>
+  <%= Subject.find(@material.subjects_id).name %>
+</p>
+
+<p>
+  <strong>Tipo do Material:</strong>
+  <%= @material.tipo %>
+</p>
+
+<p>
+  <strong>Filename:</strong>
+  <%= @material.filename %>
+</p>
+
+<p>
+  <strong>Content Type:</strong>
+  <%= @material.content_type %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= link_to 'Download', material_download_path(@material), disable_with: 'Downloading...'  %>
 </p>
 
 <%= link_to 'Edit', edit_material_path(@material) %> |

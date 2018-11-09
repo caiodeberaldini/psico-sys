@@ -1,4 +1,4 @@
-<%= form_with(model: material, local: true) do |form| %>
+<%= form_with(model: material, local: true, multipart: true) do |form| %>
   <% if material.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(material.errors.count, "error") %> prohibited this material from being saved:</h2>
@@ -14,11 +14,21 @@
   <div class="field">
     <%= form.label :description %>
     <%= form.text_field :description, id: :material_description %>
-  </div>
+  </div> 
 
   <div class="field">
     <%= form.label :subject_id %>
-    <%= form.number_field :subject_id, id: :material_subject_id %>
+    <%= form.number_field :subjects_id, id: :material_subjects_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipo %>
+    <%= form.number_field :tipo, id: :material_tipo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arquivo %>
+    <%= form.file_field :attachment %>
   </div>
 
   <div class="actions">

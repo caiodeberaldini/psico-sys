@@ -27,6 +27,7 @@ class ApostillesController < ApplicationController
   # POST /apostilles.json
   def create
     @apostille = Apostille.new(apostille_params)
+    uploaded_file(params[:apostille][:attachment])
 
     respond_to do |format|
       if @apostille.save
@@ -63,6 +64,12 @@ class ApostillesController < ApplicationController
     end
   end
 
+  def download
+    item = Apostille.find(params[:id])
+
+    send_data item.data, filename: item.filename, type: item.content_type, disposition: 'attachment'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_apostille
@@ -71,6 +78,16 @@ class ApostillesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def apostille_params
-      params.require(:apostille).permit(:description)
+      params.require(:apostille).permit(:description, :subjects_id)
+    end
+
+    def uploaded_file(incoming_file)
+      @apostille.filename = incoming_file.original_filename
+      @apostille.content_type = incoming_file.content_type
+      @apostille.data = incoming_file.read
+    end
+  
+    def filename(new_filename)
+      write_attribute("filename", sanitize_filename(new_filename))
     end
 end

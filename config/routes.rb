@@ -1,30 +1,22 @@
 Rails.application.routes.draw do
-  get "login", to: "sessions#new", as: "login"
-  get "logout", to: "sessions#destroy", as: "logout"
+  get '/login', to: "sessions#new", as: "login"
+  get '/logout', to: "sessions#destroy", as: "logout"
   
-  get "signup_students", to: "students#new", as: "signup_students"
-  get "signup_teachers", to: "teachers#new", as: "signup_teachers"
-  get "signup_administrators", to: "administrators#new", as: "signup_administrators"
+  get 'signup_students', to: "students#new", as: "signup_students"
+  get 'signup_teachers', to: "teachers#new", as: "signup_teachers"
+  get 'signup_administrators', to: "administrators#new", as: "signup_administrators"
 
   get 'home', to: "cursinho#index", as: "home"
-  get'trabalheconosco', to: "cursinho#trabalheconosco", as: "trabalheconosco"
+  get 'trabalheconosco', to: "cursinho#trabalheconosco", as: "trabalheconosco"
+  get 'apoio', to: "cursinho#apoio", as: "apoio"
+  get 'contato', to: "cursinho#contato", as: "contato"
 
-  get'subjects/matematica'
-  get'subjects/fisica'
-  get'subjects/quimica'
-  get'subjects/historia'
-  get'subjects/geografia'
-  get'subjects/filosofia'
-  get'subjects/sociologia'
-  get'subjects/linguas'
-  get'subjects/ingles'
-  get'subjects/biologia'
+  get 'quemsomos', to: "sobre#quemsomos", as: "quemsomos"
+  get 'sobrenos', to: "sobre#sobrenos", as: "sobrenos"
 
-  get'quemsomos', to: "sobre#quemsomos", as: "quemsomos"
-  get'sobrenos', to: "sobre#sobrenos", as: "sobrenos"
+  get '/materials/:id/download', to: "materials#download", as: "material_download"
+  get '/apostilles/:id/download', to: "apostilles#download", as: "apostille_download"
 
- 
-  
   resources :sessions
   
   resources :students do
