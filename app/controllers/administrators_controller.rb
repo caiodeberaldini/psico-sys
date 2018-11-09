@@ -64,7 +64,7 @@ class AdministratorsController < ApplicationController
         format.html { redirect_to administrators_url, notice: 'Administrator was successfully destroyed.' }
         format.json { head :no_content }
       end
-    else 
+    else
       redirect_to @administrator, notice: 'Não é possível apagar você mesmo!'
     end
   end
@@ -77,7 +77,7 @@ class AdministratorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def administrator_params
-      params.require(:administrator).permit(:email, :username, :password, 
+      params.require(:administrator).permit(:email, :username, :password,
       :papel, :password_confirmation)
     end
 end
