@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'home', to: "cursinho#index", as: "home"
   get 'trabalheconosco', to: "cursinho#trabalheconosco", as: "trabalheconosco"
+  get 'apoio', to: "cursinho#apoio", as: "apoio"
+  get 'contato', to: "cursinho#contato", as: "contato"
 
   get 'quemsomos', to: "sobre#quemsomos", as: "quemsomos"
   get 'sobrenos', to: "sobre#sobrenos", as: "sobrenos"
