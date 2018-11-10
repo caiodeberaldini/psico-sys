@@ -1,0 +1,28 @@
+<h1>Avisos</h1>
+
+<%= form_for @notice do |f| %>
+
+    <% if @notice.errors.any? %>
+        <div class="error_messages">
+            <h2>Form is Invalid</h2>
+
+            <ul>
+                <% @notice.erros.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <%end%>
+            </ul>
+        </div>
+    <%end%>
+
+    <div class=field>
+        <%= f.label :title %><br />
+        <%= f.text_field :title %>
+    </div>
+
+    <div class=field>
+        <%= f.label :notice_text %><br />
+        <%= f.text_area :notice_text, rows:10, cols:60%>
+    </div>
+
+    <%= f.submit class:"btn btn-primary" %>
+<%end%>

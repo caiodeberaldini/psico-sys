@@ -103,7 +103,7 @@
 
     <ul id="slide-out" class="sidenav">
       <li>
-        <% if !current_user.nil? %>
+        <% if !current_user.nil? and current_user.papel != 2%>
           <div class="user-view">
             <a "><span class="black-text name"><%=current_user.role.name%></span></a>
             <a "><span class="black-text email">paulo.akira@gmail.com</span></a>

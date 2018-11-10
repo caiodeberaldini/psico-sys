@@ -33,11 +33,19 @@
               <img src="/assets/capa2.png">
               <span class="card-title">Cursinho da Psico !</span>
             </div>
-            <div class="card-content">
-              <p id="fonte">Avisos!</p>
-            </div>
 
-          </div>
+            <%@notices = Notice.all%>
+            <div class="card-stacked">
+              <div class="card-content">
+              <%@notices.each do |n|%>
+                <h6 id="fonte"><strong><%= n.title %></strong></h6>
+                  <ul>
+                    <li><%=n.notice_text%>
+                  </ul>
+              <%end%>
+            </div>            
+        </div>
+        </div>
     </div>
 
     <%= render partial: 'application/info_footer' %>
