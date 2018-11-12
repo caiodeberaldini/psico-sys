@@ -18,6 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Dropdown.init(elems);
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems);
+    if (instance){
+      instance.destroy();
+    }
+  });
+
 
 
   document.addEventListener('DOMContentLoaded', function() {
