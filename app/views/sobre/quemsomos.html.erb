@@ -7,45 +7,26 @@
   </head>
 
     <body>
-      <header>
-        <div class="col s12 m8 offset-m2 l6 offset-l3">
-          <div class="card-panel green #669A84F z-depth-1">
-            <div class="row valign-wrapper">
-              <div class="col s3 card-image"><img src="/assets/logo.png" alt="" width="60%" ></div>
-              <div class="col s5 center-align white-text"><h2>Quem somos ?</h2></div>
-              <div class="col s4">
-                <h6><i class="material-icons left">local_phone</i>(11) 94583-1356</h6>
-                <h6><i class="material-icons left">mail</i>cursinhopsico.inscricao@gmail.com</h6>
-                <h6><i class="material-icons left">location_on</i>Av. Professor Mello Moraes, 1721, São Paulo – SP</h6>
-              </div>
-            </div>
-          </div>
+
+      <div class="card horizontal">
+        <div class="card-image">
+          <img src="/assets/logo.png">
         </div>
 
-        <ul id="dropdown1" class="dropdown-content">
-          <li><a href="/materia/matematica" class="green darken-3 white-text">Matemática</a></li>
-          <li><a href="/materia/fisica" class="green darken-3 white-text">Física</a></li>
-          <li><a href="/materia/quimica" class="green darken-3 white-text">Química</a></li>
-          <li><a href="/materia/historia" class="green darken-3 white-text">História</a></li>
-          <li><a href="/materia/geografia" class="green darken-3 white-text">Geografia</a></li>
-          <li><a href="/materia/biologia" class="green darken-3 white-text">Biologia</a></li>
-          <li><a href="/materia/linguas" class="green darken-3 white-text">Línguas</a></li>
-          <li><a href="/materia/sociologia" class="green darken-3 white-text">Sociologia</a></li>
-          <li><a href="/materia/filosofia" class="green darken-3 white-text">Filosofia</a></li>
-          <li><a href="/materia/ingles" class="green darken-3 white-text">Inglês</a></li>
-        </ul>
-      </header>
-
-      <article>
-        <div class="card-small">
-          <h2></h2>
-        </div>
-          <div class="row container">
-              <!--<div class="col s4"><a href="/sobre/sobrenos" class="waves-effect waves-light btn-large green darken-4"><i class="material-icons left">person</i>Quem somos</a></div>-->
-              <div class="col s6"><a class="waves-effect waves-light btn-large green darken-4"><i class="material-icons left">laptop</i>Nossas propostas</a></div>
-              <div class="col s6"><a class="waves-effect waves-light btn-large green darken-4"><i class="material-icons left">markunread</i>Carta: Coordenação</a></div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <h6 id="fonte"><strong>Quem somos ?</strong></h6>
+            <p>O Cursinho Popular e Pré-Universitário da Psico é um projeto educacional sem fins lucrativos coordenado por estudantes do Instituto de Psicologia (IP) da Universidade de São Paulo (USP) que atendem jovens e adultos de baixa renda que desejam ingressar na Universidade.</p>
+            <p>A partir do conceito de Pré-Universitário, o Cursinho oferece aos seus alunos uma forma de ensino ampla, que extrapola os limites do vestibular, levando em conta a formação política e cultural dos estudantes. Seus principais objetivos, descritos em seu Projeto Político-Pedagógico, são levar aos jovens e adultos de camadas populares uma extensão dos conhecimentos produzidos pela universidade, aumentar as chances de entrada e permanência desses estudantes nas universidades públicas, bem como oferecer uma formação crítica sobre os deveres e direitos dos cidadãos.</p>
+            <p>As aulas no cursinho abrangem todas as áreas (humanas, exatas e biológicas) e acontecem no período noturno de segunda a sexta e aos sábados de manhã. A secretaria do cursinho funciona na sala 30 do Centro Acadêmico e as aulas acontecem no Bloco B.</p>
           </div>
-      </article>
+        </div>
+      </div>
+
+      <div class="row container">
+        <div class="col l6 s12 center-align"><a class="waves-effect waves-light btn-large green darken-4"><i class="material-icons left">markunread</i>Carta: Coordenação</a></div>
+        <div class="col l6 s12 center-align"><a class="waves-effect waves-light btn-large green darken-4"><i class="material-icons left">laptop</i>Nossas propostas</a></div>
+      </div>
 
       <%= render partial: 'application/info_footer' %>
     </body>
