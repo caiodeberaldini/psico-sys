@@ -1,7 +1,7 @@
 class AdministratorsController < ApplicationController
-    before_action :set_administrator, only: [:show, :edit, :update, :destroy]
-    before_action :authorize
-    before_action :isAdmin, only: [:index, :show, :new, :edit, :create, :update, :destroy]
+   before_action :set_administrator, only: [:show, :edit, :update, :destroy]
+   before_action :authorize
+   before_action :isAdmin, only: [:index, :show, :new, :edit, :create, :update, :destroy]
 
   # GET /administrators
   # GET /administrators.json
