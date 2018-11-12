@@ -1,9 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<p id="fonte">
+  
   <%= @subject.name %>
 </p>
+
+<article>
+          
+
+      <%@materials = Material.all%>        
+      <div class="row valign-wrapper">
+              <div class="col s2"></div>
+              <div class="col s6"><div class="collection">
+                <a href="#" class="collection-item header active 1b5e20 green darken-4">Notas de Aula </a>
+                <%@materials.each do |n|%>
+                  <% if n.tipo==2 %> 
+                    <a href="/materials/<%=n.id%>/download" class="collection-item 1b5e20 green-text darken-4"><%=n.description%></a>
+                  <%end%>  
+                <%end%>        
+                  
+             
+      </div></div>
+              <div class="col s2"> </div></div>
+
+              <div class="row valign-wrapper">
+                <div class="col s2"></div>
+                <div class="col s6"><div class="collection">
+                  <a href="#" class="collection-item header active 1b5e20 green darken-4">Listas </a>
+                  <%@materials.each do |n|%>
+                    <% if n.tipo==1 %> 
+                      <a href="/materials/<%=n.id%>/download" class="collection-item 1b5e20 green-text darken-4"><%=n.description%></a>
+                    <%end%>  
+                  <%end%>  
+                  </div></div>
+                <div class="col s2"> </div>      
+
+      </article>
 
 <%= link_to 'Edit', edit_subject_path(@subject) %> |
 <%= link_to 'Back', subjects_path %>
