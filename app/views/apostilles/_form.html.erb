@@ -17,16 +17,19 @@
   </div>
 
   <div class="field">
-    <%= form.label :subject_id %>
-    <%= form.number_field :subjects_id, id: :appostile_subjects_id %>
+    <%= form.label :arquivo %>
+    <%= form.file_field :attachment %>
   </div>
 
   <div class="field">
-    <%= form.label :arquivo %>
-    <%= form.file_field :attachment %>
+    <%= form.label :subjects_id, 'Disciplina' %>
+    <%= form.collection_select(:subjects_id, Subject.order(:name), :id, :name, {:prompt => 'Escolha uma Disciplina'}, {:class => 'browser-default'}) %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>
+
+

@@ -11,6 +11,11 @@ class MaterialsController < ApplicationController
   # GET /materials/1
   # GET /materials/1.json
   def show
+    # O código a seguir deve ser descomentado após criar os campos adequados na migration, de acordo com
+    # o que está colocado em: https://matt.berther.io/2007/10/19/uploading-files-to-a-database-using-rails/
+    #
+    #@materials = Material.find(params[:id])
+    #send_data @materials.data, :filename => @materials.filename, :type => @materials.content_type
   end
 
   # GET /materials/new

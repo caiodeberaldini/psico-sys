@@ -9,70 +9,116 @@
   </head>
 
   <body>
+
+    <ul id="dropdown-disciplinas-nav" class="dropdown-content">
+      <% Subject.all.each do |subject| %>
+        <li><a href="/subjects/<%= subject.id %>" class="green darken-3 white-text"><%= subject.name %></a></li>
+      <% end %>
+    </ul>
+
+    <ul id="dropdown-disciplinas-side" class="dropdown-content">
+      <% Subject.all.each do |subject| %>
+        <li><a href="/subjects/<%= subject.id %>"><%= subject.name %></a></li>
+      <% end %>
+    </ul>
+
+    <ul id="dropdown-adm-nav" class="dropdown-content">
+      <li><a href="/apostilles" class="green-text darken-3">Apostilas</a></li>
+      <li><a href="/teachers" class="green-text darken-3">Professores</a></li>
+      <li><a href="/students" class="green-text darken-3">Alunos</a></li>
+      <li><a href="/administrators" class="green-text darken-3">Outros Administradores</a></li>
+      <li><a href="/subjects" class="green-text darken-3">Disciplinas</a></li>
+      <li><a href="/notices" class="green-text darken-3">Avisos</a></li>
+    </ul>
+
+    <ul id="dropdown-prof-nav" class="dropdown-content">
+      <li><a href="/materials" class="green-text darken-3">Materiais</a></li>
+    </ul>
+
+    <ul id="dropdown-aluno-nav" class="dropdown-content">
+      <li><a href="/apostilles" class="green-text darken-3">Apostilas</a></li>
+    </ul>
+
+    <ul id="dropdown-adm-side" class="dropdown-content">
+      <li><a href="/apostilles" >Apostilas</a></li>
+      <li><a href="/teachers" >Professores</a></li>
+      <li><a href="/students" >Alunos</a></li>
+      <li><a href="/administrators" >Outros Administradores</a></li>
+      <li><a href="/subjects" >Disciplinas</a></li>
+      <li><a href="/notices" >Avisos</a></li>
+    </ul>
+
+    <ul id="dropdown-prof-side" class="dropdown-content">
+      <li><a href="/materials" >Materiais</a></li>
+    </ul>
+
+    <ul id="dropdown-aluno-side" class="dropdown-content">
+      <li><a href="/apostilles" >Apostilas</a></li>
+    </ul>
+
     <nav id="navegacao" >
       <div class="nav-wrapper green darken-3">
         <ul id="nav-mobile" class="left">
           <li><a data-target="slide-out" class="sidenav-trigger"><i class="material-icons green darken-3 hide-on-large-only">menu</i></a></li>
           <li><a href="/home" class="hide-on-med-and-down" style="font-weight: bold;">Home</a></li>
           <li><a href="/quemsomos" class="hide-on-med-and-down" style="font-weight: bold;">Quem somos?</a></li>
-          <li><a class="dropdown-trigger hide-on-med-and-down" data-target="dropdown1" style="font-weight: bold;">Disciplinas<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-trigger hide-on-med-and-down" data-target="dropdown-disciplinas-nav" style="font-weight: bold;">Disciplinas<i class="material-icons right">arrow_drop_down</i></a></li>
           <li><a href="" class="hide-on-med-and-down" style="font-weight: bold;">Matrículas</a></li>
           <li><a href="/apoio" class="hide-on-med-and-down" style="font-weight: bold;">Apoios Psicológico</a></li>
           <li><a href="/trabalheconosco" class="hide-on-med-and-down" style="font-weight: bold;">Trabalhe Conosco</a></li>
           <li><a href="/contato" class="hide-on-med-and-down" style="font-weight: bold;">Contato</a></li>
         </ul>
-        <ul id="nav-mobile" class="right">        
+        <ul id="nav-mobile" class="right">
           <% if current_user.nil? %>
             <li><a href="/login" class="hide-on-med-and-down waves-effect orange accent-3 btn-large">Entrar</a></li>
           <% else %>
+            <% if current_user.papel == 2  %>
+              <li><a class="dropdown-trigger hide-on-med-and-down" data-target="dropdown-adm-nav" style="font-weight: bold;">Administrador<i class="material-icons right">arrow_drop_down</i></a></li>
+            <% end %>
+            <% if current_user.papel == 1  %>
+              <li><a class="dropdown-trigger hide-on-med-and-down" data-target="dropdown-prof-nav" style="font-weight: bold;">Professor<i class="material-icons right">arrow_drop_down</i></a></li>
+            <% end %>
+            <% if current_user.papel == 0  %>
+              <li><a class="dropdown-trigger hide-on-med-and-down" data-target="dropdown-aluno-nav" style="font-weight: bold;">Aluno<i class="material-icons right">arrow_drop_down</i></a></li>
+            <% end %>
             <li><a href="/logout" class="hide-on-med-and-down waves-effect orange accent-3 btn-large">Sair</a></li>
           <% end %>
         </ul>
       </div>
     </nav>
-    
-    <!--<nav class="green darken-3">
-      <div class="nav-wrapper">
-          <span class="brand-logo center">Cursinho da Psico</span>
-          <a data-target="slide-out" class="btn-floating btn-flat sidenav-trigger show-on-large">
-              <i class="material-icons">menu</i>
-          </a>
-
-          <ul class="right hide-on-med-and-down">
-              <li><a href="home" style="font-weight: bold;">Home</a></li>
-              <li><a href="quemsomos" style="font-weight: bold;">Quem Somos</a></li>
-              <li><a href="sobrenos" style="font-weight: bold;">O Projeto</a></li>
-              <li><a href="trabalheconosco" style="font-weight: bold;">Trabalhe Conosco</a></li>
-              <li><a href="/contato" style="font-weight: bold;">Contatos</a></li>
-          </ul>
-      </div>
-    </nav>
 
     <ul id="slide-out" class="sidenav">
-        <li><a href="home">Home</a></li>
-        <li><a href="quemsomos">Quem Somos</a></li>
-        <li><a href="sobrenos">O Projeto</a></li>
-        <li><a href="trabalheconosco">Trabalhe Conosco</a></li>
-        <li><a href="">Contatos</a></li>
-        <hr>
-        <li><a href="">Disciplinas</a></li>
-        <li><a href="">Materiais</a></li>
-        <% if !current_user.nil?  %>
-            <li><a href="">Apostilas</a></li>
-            <% if current_user.papel == 2  %>
-              <hr>
-              <li><a href="signup_students">Cadastrar Aluno</a></li>
-              <li><a href="signup_teachers">Cadastrar Professor</a></li>
-              <li><a href="signup_administrators">Cadastrar Administrador</a></li>
-            <% end %>
-            <hr>
-            <li><a href="logout">Sair</a></li>
-        <% else %>
-            <hr>
-            <li><a href="login">Entrar</a></li>
+      <li>
+        <% if !current_user.nil? and current_user.papel != 2%>
+          <div class="user-view">
+            <a "><span class="black-text name"><%=current_user.role.name%></span></a>
+            <a "><span class="black-text email">paulo.akira@gmail.com</span></a>
+          </div>
         <% end %>
-    </ul>-->
-    
+      </li>
+      <li><a href="/home">Home</a></li>
+      <li><a href="/quemsomos">Quem somos?</a></li>
+      <li><a data-target="dropdown-disciplinas-side" class="dropdown-trigger">Disciplinas<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a href="#!">Matrículas</a></li>
+      <li><a href="/apoio">Apoios Psicológicos</a></li>
+      <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
+      <li><a href="/contato">Contato</a></li>
+      <% if current_user.nil? %>
+        <li><a href="/login" class="waves-effect orange accent-3 btn-large">Entrar</a></li>
+      <% else %>
+        <% if current_user.papel == 2  %>
+          <li><a class="dropdown-trigger" data-target="dropdown-adm-side" style="font-weight: bold;">Administrador<i class="material-icons right">arrow_drop_down</i></a></li>
+        <% end %>
+        <% if current_user.papel == 1  %>
+          <li><a class="dropdown-trigger" data-target="dropdown-prof-side" style="font-weight: bold;">Professor<i class="material-icons right">arrow_drop_down</i></a></li>
+        <% end %>
+        <% if current_user.papel == 0  %>
+          <li><a class="dropdown-trigger" data-target="dropdown-aluno-side" style="font-weight: bold;">Aluno<i class="material-icons right">arrow_drop_down</i></a></li>
+        <% end %>
+        <li><a href="/logout" class="waves-effect orange accent-3 btn-large">Sair</a></li>
+      <% end %>
+    </ul>
+
     <%= yield %>
   </body>
 </html>

@@ -52,8 +52,8 @@
     </div>
 
     <div class=field>
-        <%= form.label :disciplina %><br />
-        <%= form.text_field :disciplina %>
+        <%= form.label :disciplina, 'Disciplina' %><br />
+        <%= form.collection_select(:disciplina, Subject.order(:name), :id, :name, {:prompt => 'Escolha uma Disciplina'}, {:class => 'browser-default'}) %>
     </div>
 
     <div class=field>

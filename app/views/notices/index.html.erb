@@ -1,0 +1,18 @@
+<h3>Avisos do Cursinho Psicologia</h3>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Título</th>
+            <th>Texto</th>
+        </tr>
+        <% @notices.each do |n|  %>
+            <tr>
+                <td><%= n.title %></td>
+                <td><%= n.notice_text %></td>
+                <td><%= link_to "Editar", edit_notice_url(n) %></td>
+                <td><%= link_to "Deletar", n, method: :delete, data: {confirm: "Tem certeza?"} %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

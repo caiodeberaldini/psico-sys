@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+    <strong>Título</strong>
+    <%= @notice.title %>
+</p>
+
+<p>
+    <strong>Texto</strong>
+    <%= @notice.notice_text %>
+</p>
+
+<%= button_to "Voltar", notices_path, class: "btn btn-primary", method: :get %>
