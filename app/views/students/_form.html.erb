@@ -53,17 +53,17 @@
 
     <div class=field>
         <%= form.label :scholarship, 'Bolsa' %><br />
-        <%= form.select(:scholarship, [['Não tem Bolsa', 0], ['Tem Bolsa', 1]], {:prompt => true}, {:class => 'browser-default'})%>
+        <%= form.select(:scholarship, [['Não tem Bolsa', 0], ['Tem Bolsa', 1]], {:prompt => "Selecione uma opção"}, {:class => 'browser-default'})%>
     </div>
 
     <div class=field>
         <%= form.label :scholarship_need, 'Necessidade de Bolsa' %><br />
-        <%= form.select(:scholarship_need, [['Não Necessita de Bolsa', 0], ['Necessita de Bolsa', 1]], {:prompt => true}, {:class => 'browser-default'}) %>
+        <%= form.select(:scholarship_need, [['Não Necessita de Bolsa', 0], ['Necessita de Bolsa', 1]], {:prompt => "Selecione uma opção"}, {:class => 'browser-default'}) %>
     </div>
 
     <div class=field>
         <%= form.label :situation, 'Situação' %><br />
-        <%= form.select(:situation, [['Não Matriculado', 0], ['Matriculado', 1]], {:prompt => true}, {:class => 'browser-default'}) %>
+        <%= form.select(:situation, [['Não Matriculado', 0], ['Matriculado', 1]], {:prompt => "Selecione uma opção"}, {:class => 'browser-default'}) %>
     </div>
 
     <div class=field>

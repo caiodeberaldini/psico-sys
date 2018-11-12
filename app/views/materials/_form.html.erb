@@ -12,18 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :description, 'Descrição' %>
     <%= form.text_field :description, id: :material_description %>
   </div> 
 
   <div class="field">
-    <%= form.label :subject_id %>
-    <%= form.number_field :subjects_id, id: :material_subjects_id %>
-  </div>
-
-  <div class="field">
     <%= form.label :tipo %>
-    <%= form.number_field :tipo, id: :material_tipo %>
+    <%= form.select(:tipo, [['Aula', 0], ['Lista', 1]], {:prompt => "Selecione um tipo"}, {:class => "browser-default"}) %>
   </div>
 
   <div class="field">
@@ -32,8 +27,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :subjects_id, :Matéria %>
-    <%= form.collection_select(:subjects_id, Subject.order(:name), :id, :name, {:prompt => true}, {:class => 'browser-default'}) %>
+    <%= form.label :subjects_id, 'Matéria' %>
+    <%= form.collection_select(:subjects_id, Subject.order(:name), :id, :name, {:prompt => 'Selecione a disciplina'}, {:class => 'browser-default'}) %>
   </div>
 
   <div class="actions">
