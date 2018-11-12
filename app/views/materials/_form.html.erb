@@ -31,6 +31,11 @@
     <%= form.file_field :attachment %>
   </div>
 
+  <div class="field">
+    <%= form.label :subjects_id, :Matéria %>
+    <%= form.collection_select(:subjects_id, Subject.order(:name), :id, :name, {:prompt => true}, {:class => 'browser-default'}) %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

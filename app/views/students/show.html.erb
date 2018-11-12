@@ -1,67 +1,79 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-    <strong>Nome</strong>
+    <strong>Nome:</strong>
     <%= @student.name %>
 </p>
 
 <p>
-    <strong>Data de Nascimento</strong>
+    <strong>Data de Nascimento:</strong>
     <%= @student.birth_date %>
 </p>
 
 <p>
-    <strong>CPF</strong>
+    <strong>CPF:</strong>
     <%= @student.cpf %>
 </p>
 
 <p>
-    <strong>Telefone</strong>
+    <strong>Telefone:</strong>
     <%= @student.phone %>
 </p>
 
 <p>
-    <strong>Celular</strong>
+    <strong>Celular:</strong>
     <%= @student.cell_phone %>
 </p>
 
 <p>
-    <strong>Endereço</strong>
+    <strong>Endereço:</strong>
     <%= @student.address %>
 </p>
 
 <p>
-    <strong>Cidade</strong>
+    <strong>Cidade:</strong>
     <%= @student.city %>
 </p>
 
 <p>
-    <strong>State</strong>
+    <strong>State:</strong>
     <%= @student.state %>
 </p>
 
 <p>
-    <strong>Bolsa de Estudos</strong>
-    <%= @student.scholarship %>
+    <strong>Bolsa de Estudos:</strong>
+    <% if @student.scholarship == 0 %>
+        <span>Não tem bolsa de estudo</span>
+    <% elsif @student.scholarship == 1 %>
+        <span>Tem bolsa de estudo</span>
+    <% end %>
 </p>
 
 <p>
-    <strong>Necessidade de Bolsa de Estudos</strong>
-    <%= @student.scholarship_need %>
+    <strong>Necessidade de Bolsa de Estudos:</strong>
+    <% if @student.scholarship_need == 0 %>
+        <span>Não necessita de bolsa de estudos</span>
+    <% elsif @student.scholarship_need == 1 %>
+        <span>Necessita de bolsa de estudos</span>
+    <% end %>
 </p>
 
 <p>
-    <strong>Situação</strong>
-    <%= @student.situation %>
+    <strong>Situação:</strong>
+    <% if @student.situation == 0 %>
+        <span>Não matriculado</span>
+    <% elsif @student.situation == 0 %>
+        <span>Matriculado</span>
+    <% end %>
 </p>
 
 <p>
-    <strong>E-Mail</strong>
+    <strong>E-Mail:</strong>
     <%= @student.email %>
 </p>
 
 <p>
-    <strong>Classe</strong>
+    <strong>Classe:</strong>
     <%= @student.classe %>
 </p>
 

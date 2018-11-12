@@ -11,63 +11,49 @@
   <body>
 
     <ul id="dropdown-disciplinas-nav" class="dropdown-content">
-      <li><a href="/subjects/matematica" class="green darken-3 white-text">Matemática</a></li>
-      <li><a href="/subjects/fisica" class="green darken-3 white-text">Física</a></li>
-      <li><a href="/subjects/quimica" class="green darken-3 white-text">Química</a></li>
-      <li><a href="/subjects/historia" class="green darken-3 white-text">História</a></li>
-      <li><a href="/subjects/geografia" class="green darken-3 white-text">Geografia</a></li>
-      <li><a href="/subjects/biologia" class="green darken-3 white-text">Biologia</a></li>
-      <li><a href="/subjects/linguas" class="green darken-3 white-text">Línguas</a></li>
-      <li><a href="/subjects/sociologia" class="green darken-3 white-text">Sociologia</a></li>
-      <li><a href="/subjects/filosofia" class="green darken-3 white-text">Filosofia</a></li>
-      <li><a href="/subjects/ingles" class="green darken-3 white-text">Inglês</a></li>
+      <% Subject.all.each do |subject| %>
+        <li><a href="/subjects/<%= subject.id %>" class="green darken-3 white-text"><%= subject.name %></a></li>
+      <% end %>
     </ul>
 
     <ul id="dropdown-disciplinas-side" class="dropdown-content">
-      <li><a href="/subjects/matematica">Matemática</a></li>
-      <li><a href="/subjects/fisica">Física</a></li>
-      <li><a href="/subjects/quimica">Química</a></li>
-      <li><a href="/subjects/historia">História</a></li>
-      <li><a href="/subjects/geografia">Geografia</a></li>
-      <li><a href="/subjects/biologia">Biologia</a></li>
-      <li><a href="/subjects/linguas">Línguas</a></li>
-      <li><a href="/subjects/sociologia">Sociologia</a></li>
-      <li><a href="/subjects/filosofia">Filosofia</a></li>
-      <li><a href="/subjects/ingles">Inglês</a></li>
+      <% Subject.all.each do |subject| %>
+        <li><a href="/subjects/<%= subject.id %>"><%= subject.name %></a></li>
+      <% end %>
     </ul>
 
     <ul id="dropdown-adm-nav" class="dropdown-content">
-      <li><a href="#" class="green-text darken-3">Apostilas</a></li>
-      <li><a href="#" class="green-text darken-3">Professores</a></li>
-      <li><a href="#" class="green-text darken-3">Alunos</a></li>
-      <li><a href="#" class="green-text darken-3">Outros Administradores</a></li>
-      <li><a href="#" class="green-text darken-3">Disciplinas</a></li>
-      <li><a href="#" class="green-text darken-3">Avisos</a></li>
+      <li><a href="/apostilles" class="green-text darken-3">Apostilas</a></li>
+      <li><a href="/teachers" class="green-text darken-3">Professores</a></li>
+      <li><a href="/students" class="green-text darken-3">Alunos</a></li>
+      <li><a href="/administrators" class="green-text darken-3">Outros Administradores</a></li>
+      <li><a href="/subjects" class="green-text darken-3">Disciplinas</a></li>
+      <li><a href="/notices" class="green-text darken-3">Avisos</a></li>
     </ul>
 
     <ul id="dropdown-prof-nav" class="dropdown-content">
-      <li><a href="#" class="green-text darken-3">Materiais</a></li>
+      <li><a href="/materials" class="green-text darken-3">Materiais</a></li>
     </ul>
 
     <ul id="dropdown-aluno-nav" class="dropdown-content">
-      <li><a href="#" class="green-text darken-3">Apostilas</a></li>
+      <li><a href="/apostilles" class="green-text darken-3">Apostilas</a></li>
     </ul>
 
     <ul id="dropdown-adm-side" class="dropdown-content">
-      <li><a href="#" >Apostilas</a></li>
-      <li><a href="#" >Professores</a></li>
-      <li><a href="#" >Alunos</a></li>
-      <li><a href="#" >Outros Administradores</a></li>
-      <li><a href="#" >Disciplinas</a></li>
-      <li><a href="#" >Avisos</a></li>
+      <li><a href="/apostilles" >Apostilas</a></li>
+      <li><a href="/teachers" >Professores</a></li>
+      <li><a href="/students" >Alunos</a></li>
+      <li><a href="/administrators" >Outros Administradores</a></li>
+      <li><a href="/subjects" >Disciplinas</a></li>
+      <li><a href="/notices" >Avisos</a></li>
     </ul>
 
     <ul id="dropdown-prof-side" class="dropdown-content">
-      <li><a href="#" >Materiais</a></li>
+      <li><a href="/materials" >Materiais</a></li>
     </ul>
 
     <ul id="dropdown-aluno-side" class="dropdown-content">
-      <li><a href="#" >Apostilas</a></li>
+      <li><a href="/apostilles" >Apostilas</a></li>
     </ul>
 
     <nav id="navegacao" >
@@ -110,13 +96,13 @@
           </div>
         <% end %>
       </li>
-      <li><a href="#!">Home</a></li>
-      <li><a href="#!">Quem somos?</a></li>
+      <li><a href="/home">Home</a></li>
+      <li><a href="/quemsomos">Quem somos?</a></li>
       <li><a data-target="dropdown-disciplinas-side" class="dropdown-trigger">Disciplinas<i class="material-icons right">arrow_drop_down</i></a></li>
       <li><a href="#!">Matrículas</a></li>
-      <li><a href="#!">Apoios Psicológicos</a></li>
-      <li><a href="#!">Trabalhe Conosco</a></li>
-      <li><a href="#!">Contato</a></li>
+      <li><a href="/apoio">Apoios Psicológicos</a></li>
+      <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
+      <li><a href="/contato">Contato</a></li>
       <% if current_user.nil? %>
         <li><a href="/login" class="waves-effect orange accent-3 btn-large">Entrar</a></li>
       <% else %>
@@ -132,53 +118,6 @@
         <li><a href="/logout" class="waves-effect orange accent-3 btn-large">Sair</a></li>
       <% end %>
     </ul>
-
-    <!--
-    current_user.role == 0 -> Alunos
-    current_user.role == 1 -> Professor
-    current_user.role == 2 -> Adm
-    -->
-    <!--<nav class="green darken-3">
-      <div class="nav-wrapper">
-          <span class="brand-logo center">Cursinho da Psico</span>
-          <a data-target="slide-out" class="btn-floating btn-flat sidenav-trigger show-on-large">
-              <i class="material-icons">menu</i>
-          </a>
-
-          <ul class="right hide-on-med-and-down">
-              <li><a href="home" style="font-weight: bold;">Home</a></li>
-              <li><a href="quemsomos" style="font-weight: bold;">Quem Somos</a></li>
-              <li><a href="sobrenos" style="font-weight: bold;">O Projeto</a></li>
-              <li><a href="trabalheconosco" style="font-weight: bold;">Trabalhe Conosco</a></li>
-              <li><a href="/contato" style="font-weight: bold;">Contatos</a></li>
-          </ul>
-      </div>
-    </nav>
-
-    <ul id="slide-out" class="sidenav">
-        <li><a href="home">Home</a></li>
-        <li><a href="quemsomos">Quem Somos</a></li>
-        <li><a href="sobrenos">O Projeto</a></li>
-        <li><a href="trabalheconosco">Trabalhe Conosco</a></li>
-        <li><a href="">Contatos</a></li>
-        <hr>
-        <li><a href="">Disciplinas</a></li>
-        <li><a href="">Materiais</a></li>
-        <% if !current_user.nil?  %>
-            <li><a href="">Apostilas</a></li>
-            <% if current_user.papel == 2  %>
-              <hr>
-              <li><a href="signup_students">Cadastrar Aluno</a></li>
-              <li><a href="signup_teachers">Cadastrar Professor</a></li>
-              <li><a href="signup_administrators">Cadastrar Administrador</a></li>
-            <% end %>
-            <hr>
-            <li><a href="logout">Sair</a></li>
-        <% else %>
-            <hr>
-            <li><a href="login">Entrar</a></li>
-        <% end %>
-    </ul>-->
 
     <%= yield %>
   </body>

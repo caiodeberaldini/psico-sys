@@ -52,18 +52,18 @@
     </div>
 
     <div class=field>
-        <%= form.label :scholarship %><br />
-        <%= form.number_field :scholarship %>
+        <%= form.label :scholarship, 'Bolsa' %><br />
+        <%= form.select(:scholarship, [['Não tem Bolsa', 0], ['Tem Bolsa', 1]], {:prompt => true}, {:class => 'browser-default'})%>
     </div>
 
     <div class=field>
-        <%= form.label :scholarship_need %><br />
-        <%= form.number_field :scholarship_need %>
+        <%= form.label :scholarship_need, 'Necessidade de Bolsa' %><br />
+        <%= form.select(:scholarship_need, [['Não Necessita de Bolsa', 0], ['Necessita de Bolsa', 1]], {:prompt => true}, {:class => 'browser-default'}) %>
     </div>
 
     <div class=field>
-        <%= form.label :situation %><br />
-        <%= form.number_field :situation %>
+        <%= form.label :situation, 'Situação' %><br />
+        <%= form.select(:situation, [['Não Matriculado', 0], ['Matriculado', 1]], {:prompt => true}, {:class => 'browser-default'}) %>
     </div>
 
     <div class=field>
