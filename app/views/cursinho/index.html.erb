@@ -6,48 +6,28 @@
       <meta name="author" content="Paulo Akira"/>
   </head>
 
-  <header>
-    <!--<div class="col s12 s8 offset-s2 s6 offset-m3">
-        <div class="card-panel green #669A84F z-depth-1 card-small">
-          <div class="row valign-wrapper">
-            <div class="col s6 ">
-              <img src="/assets/logo.png" alt="" width="25%">
-            </div>
-            <div class="col s6">
-              <span class="black-text">
-                <a href="login" class="waves-effect orange accent-3 btn-large">Login</a>
-              </span>
-            </div>
-          </div>
-        </div>
-    </div>-->
-
-    
-  </header>
-
   <body>
 
-    <div class="col s12 m6">
+    <div class="col l12 m6 s0">
           <div class="card horizontal card medium">
             <div class="card-image">
-              <img src="/assets/capa2.png">
-              <span class="card-title">Cursinho da Psico !</span>
+              <img src="/assets/fachada.jpg">
             </div>
 
             <%@notices = Notice.all%>
             <div class="card-stacked">
               <div class="card-content">
+                <h6 id="fonte" class="card-title"><strong>Cursinho da Psico !</strong></h6>
               <%@notices.each do |n|%>
-                <h6 id="fonte"><strong><%= n.title %></strong></h6>
+                <h6><strong><%= n.title %></strong></h6>
                   <ul>
                     <li><%=n.notice_text%>
                   </ul>
               <%end%>
-            </div>            
+            </div>
         </div>
         </div>
     </div>
-
-    <%= render partial: 'application/info_footer' %>
   </body>
+  <%= render partial: 'application/info_footer' %>
 </html>

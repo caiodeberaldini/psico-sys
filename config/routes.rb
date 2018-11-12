@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :notices
   get '/login', to: "sessions#new", as: "login"
   get '/logout', to: "sessions#destroy", as: "logout"
   
@@ -37,6 +36,8 @@ Rails.application.routes.draw do
   resources :apostilles
 
   resources :subjects
+
+  resources :notices
 
   root to: "cursinho#index"
 

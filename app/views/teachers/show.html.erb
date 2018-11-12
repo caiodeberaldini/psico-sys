@@ -1,53 +1,53 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-    <strong>Nome</strong>
+    <strong>Nome:</strong>
     <%= @teacher.name %>
 </p>
 
 <p>
-    <strong>Data de Nascimento</strong>
+    <strong>Data de Nascimento:</strong>
     <%= @teacher.birth_date %>
 </p>
 
 <p>
-    <strong>CPF</strong>
+    <strong>CPF:</strong>
     <%= @teacher.cpf %>
 </p>
 
 <p>
-    <strong>Telefone</strong>
+    <strong>Telefone:</strong>
     <%= @teacher.phone %>
 </p>
 
 <p>
-    <strong>Celular</strong>
+    <strong>Celular:</strong>
     <%= @teacher.cell_phone %>
 </p>
 
 <p>
-    <strong>Endereço</strong>
+    <strong>Endereço:</strong>
     <%= @teacher.address %>
 </p>
 
 <p>
-    <strong>Cidade</strong>
+    <strong>Cidade:</strong>
     <%= @teacher.city %>
 </p>
 
 <p>
-    <strong>State</strong>
+    <strong>State:</strong>
     <%= @teacher.state %>
 </p>
 
 <p>
-    <strong>E-Mail</strong>
+    <strong>E-Mail:</strong>
     <%= @teacher.email %>
 </p>
 
 <p>
-    <strong>Área de Atuação</strong>
-    <%= @teacher.disciplina %>
+    <strong>Área de Atuação:</strong>
+    <%= Subject.find(@teacher.disciplina).name %>
 </p>
 
 <%= render partial: "users/user", locals: {role: @teacher} %>
