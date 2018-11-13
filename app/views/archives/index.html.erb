@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Arquivos do Cursinho</h1>
 
 <table>
@@ -25,9 +23,9 @@
           <td>Vagas para Professores</td>
         <%end%>
         <td><%= link_to 'Download do Arquivo', archive_download_path(archive) %></td>
-        <td><%= link_to 'Show', archive %></td>
-        <td><%= link_to 'Edit', edit_archive_path(archive) %></td>
-        <td><%= link_to 'Destroy', archive, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Visualizar', archive %></td>
+        <td><%= link_to 'Editar', edit_archive_path(archive) %></td>
+        <td><%= link_to 'Deletar', archive, method: :delete, data: { confirm: 'Tem Certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

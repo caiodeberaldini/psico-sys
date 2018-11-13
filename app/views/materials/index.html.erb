@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Materiais</h1>
 
 <table>
@@ -17,9 +15,9 @@
         <td><%= material.description %></td>
         <td><%= Subject.find(material.subjects_id).name %></td>
         <td><%= link_to 'Download do Arquivo', material_download_path(material) %></td>
-        <td><%= link_to 'Show', material %></td>
-        <td><%= link_to 'Edit', edit_material_path(material) %></td>
-        <td><%= link_to 'Destroy', material, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Visualizar', material %></td>
+        <td><%= link_to 'Editar', edit_material_path(material) %></td>
+        <td><%= link_to 'Deletar', material, method: :delete, data: { confirm: 'Tem Certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

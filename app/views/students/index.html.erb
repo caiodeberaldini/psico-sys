@@ -12,6 +12,7 @@
                 <td><%= student.name %></td>
                 <td><%= student.address %></td>
                 <td><%= student.cpf %></td>
+                <td><%= link_to 'Visualizar', student %></td>
                 <td><%= link_to "Editar", edit_student_url(student) %></td>
                 <td><%= link_to "Deletar", student, method: :delete, data: {confirm: "Tem certeza?"} %></td>
             </tr>
