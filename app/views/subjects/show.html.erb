@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p id="fonte">
   
   <%= @subject.name %>
@@ -36,7 +34,7 @@
                 <div class="col s2"> </div>      
 
       </article>
-<% if current_user.papel == 2 %>
+<% if !current_user.nil? and current_user.papel == 2 %>
   <%= link_to 'Edit', edit_subject_path(@subject) %> |
   <%= link_to 'Back', subjects_path %>
 <% end %>
