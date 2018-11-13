@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181110004241) do
+ActiveRecord::Schema.define(version: 20181113115759) do
 
   create_table "administrators", force: :cascade do |t|
     t.string "email", null: false
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20181110004241) do
     t.string "content_type"
     t.binary "data"
     t.index ["subjects_id"], name: "index_apostilles_on_subjects_id"
+  end
+
+  create_table "archives", force: :cascade do |t|
+    t.string "description"
+    t.integer "tipo"
+    t.string "filename"
+    t.string "content_type"
+    t.binary "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "materials", force: :cascade do |t|

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :archives
   get '/login', to: "sessions#new", as: "login"
   get '/logout', to: "sessions#destroy", as: "logout"
   
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
 
   get '/materials/:id/download', to: "materials#download", as: "material_download"
   get '/apostilles/:id/download', to: "apostilles#download", as: "apostille_download"
+  get '/archives/:id/download', to: "archives#download", as: "archive_download"
 
   resources :sessions
   

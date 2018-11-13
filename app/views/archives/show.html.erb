@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= @archive.description %>
+</p>
+
+<p>
+  <strong>Tipo do Arquivo:</strong>
+  <%= @archive.tipo %>
+</p>
+
+<p>
+  <strong>Filename:</strong>
+  <%= @archive.filename %>
+</p>
+
+<p>
+  <strong>Content Type:</strong>
+  <%= @archive.content_type %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= link_to 'Download', archive_download_path(@archive), disable_with: 'Downloading...'  %>
+</p>
+
+<%= link_to 'Edit', edit_archive_path(@archive) %> |
+<%= link_to 'Back', archives_path %>

@@ -1,0 +1,32 @@
+<%= form_with(model: archive, local: true, multipart: true) do |form| %>
+    <% if archive.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(archive.errors.count, "error") %> prohibited this archive from being saved:</h2>
+
+            <ul>
+            <% archive.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+        <%= form.label :description, 'Descrição' %>
+        <%= form.text_field :description, id: :archive_description %>
+    </div> 
+
+    <div class="field">
+        <%= form.label :tipo %>
+        <%= form.select(:tipo, [['Carta da Coordenação', 0], ['Formulário do Professor', 1], ['Vagas para Professores', 2]], {:prompt => "Selecione um tipo"}, {:class => "browser-default"}) %>
+    </div>
+
+    <div class="field">
+        <%= form.label :arquivo %>
+        <%= form.file_field :attachment %>
+    </div>
+
+    <div class="actions">
+        <%= form.submit %>
+    </div>
+<% end %>

@@ -27,6 +27,8 @@
 </table>
 
 <br>
-<% if current_user.papel == 2 %>
-  <%= link_to 'Nova Apostila', new_apostille_path %>
+<% if !current_user.nil? %>
+  <% if current_user.papel == 2 %>
+    <%= link_to 'Nova Apostila', new_apostille_path %>
+  <% end %>
 <% end %>
