@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Apostilles</h1>
+<h1>Apostilas</h1>
 
 <table>
   <thead>
@@ -17,13 +17,16 @@
         <td><%= Subject.find(apostille.subjects_id).name %></td>
         <td><%= link_to 'Download do Arquivo', apostille_download_path(apostille) %></td>
         <td><%= link_to 'Show', apostille %></td>
-        <td><%= link_to 'Edit', edit_apostille_path(apostille) %></td>
-        <td><%= link_to 'Destroy', apostille, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.papel == 2%>
+          <td><%= link_to 'Edit', edit_apostille_path(apostille) %></td>
+          <td><%= link_to 'Destroy', apostille, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Apostille', new_apostille_path %>
+<% if current_user.papel == 2 %>
+  <%= link_to 'Nova Apostila', new_apostille_path %>
+<% end %>
