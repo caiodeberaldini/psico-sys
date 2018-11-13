@@ -14,7 +14,7 @@
               <div class="col s6"><div class="collection">
                 <a href="#" class="collection-item header active 1b5e20 green darken-4">Notas de Aula </a>
                 <%@materials.each do |n|%>
-                  <% if n.tipo==2 %> 
+                  <% if n.tipo==0 and n.subjects_id.to_s == params[:id] %> 
                     <a href="/materials/<%=n.id%>/download" class="collection-item 1b5e20 green-text darken-4"><%=n.description%></a>
                   <%end%>  
                 <%end%>        
@@ -28,7 +28,7 @@
                 <div class="col s6"><div class="collection">
                   <a href="#" class="collection-item header active 1b5e20 green darken-4">Listas </a>
                   <%@materials.each do |n|%>
-                    <% if n.tipo==1 %> 
+                    <% if n.tipo==1 and n.subjects_id.to_s == params[:id]%> 
                       <a href="/materials/<%=n.id%>/download" class="collection-item 1b5e20 green-text darken-4"><%=n.description%></a>
                     <%end%>  
                   <%end%>  
