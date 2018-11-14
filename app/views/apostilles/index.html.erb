@@ -1,9 +1,9 @@
-<h1>Apostilas</h1>
+<h1 id="fonte">Apostilas</h1>
 
-<table>
+<table class="highlight">
   <thead>
     <tr>
-      <th>Description</th>
+      <th>Descrição</th>
       <th>Disciplina</th>
       <th colspan="3"></th>
     </tr>
@@ -14,11 +14,16 @@
       <tr>
         <td><%= apostille.description %></td>
         <td><%= Subject.find(apostille.subjects_id).name %></td>
-        <td><%= link_to 'Download do Arquivo', apostille_download_path(apostille) %></td>
-        <td><%= link_to 'Visualizar', apostille %></td>
+
+        <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">file_download</i>Download</button>'.html_safe, apostille_download_path(apostille) %>
+        <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">file_download</i>Download</button>'.html_safe, apostille_download_path(apostille) %></td>
+
         <% if current_user.papel == 2%>
-          <td><%= link_to 'Editar', edit_apostille_path(apostille) %></td>
-          <td><%= link_to 'Deletar', apostille, method: :delete, data: { confirm: 'Tem Certeza?' } %></td>
+          <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">edit</i>Editar</button>'.html_safe, edit_apostille_path(apostille) %>
+          <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">edit</i>Editar</button>'.html_safe, edit_apostille_path(apostille) %></td>
+
+          <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">delete</i>Apagar</button>'.html_safe, apostille, method: :delete, data: { confirm: 'Tem Certeza?' } %>
+          <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">delete</i>Apagar</button>'.html_safe, apostille, method: :delete, data: { confirm: 'Tem Certeza?' } %></td>
         <% end %>
       </tr>
     <% end %>
@@ -28,6 +33,6 @@
 <br>
 <% if !current_user.nil? %>
   <% if current_user.papel == 2 %>
-    <%= link_to 'Nova Apostila', new_apostille_path %>
+    <%= link_to '<button class="btn green darken-3"><i class="material-icons left">create</i>Nova apostila</button>'.html_safe, new_apostille_path %>
   <% end %>
 <% end %>

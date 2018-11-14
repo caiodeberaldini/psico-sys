@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :archives
   get '/login', to: "sessions#new", as: "login"
   get '/logout', to: "sessions#destroy", as: "logout"
-  
+
   get 'signup_students', to: "students#new", as: "signup_students"
   get 'signup_teachers', to: "teachers#new", as: "signup_teachers"
   get 'signup_administrators', to: "administrators#new", as: "signup_administrators"
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get '/archives/:id/download', to: "archives#download", as: "archive_download"
 
   resources :sessions
-  
+
   resources :students do
     resources :users, module: :students
   end

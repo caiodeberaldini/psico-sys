@@ -1,37 +1,36 @@
 <p id="fonte">
-  
+
   <%= @subject.name %>
 </p>
 
 <article>
-          
 
-      <%@materials = Material.all%>        
-      <div class="row valign-wrapper">
-              <div class="col s2"></div>
-              <div class="col s6"><div class="collection">
+
+      <%@materials = Material.all%>
+      <div class="row">
+
+        <div class="col l4 offset-l1 m4 offset-m1  s8 offset-s2">
+          <div class="collection">
                 <a href="#" class="collection-item header active 1b5e20 green darken-4">Notas de Aula </a>
                 <%@materials.each do |n|%>
-                  <% if n.tipo==0 and n.subjects_id.to_s == params[:id] %> 
+                  <% if n.tipo==0 and n.subjects_id.to_s == params[:id] %>
                     <a href="/materials/<%=n.id%>/download" class="collection-item 1b5e20 green-text darken-4"><%=n.description%></a>
-                  <%end%>  
-                <%end%>        
-                  
-             
-      </div></div>
-              <div class="col s2"> </div></div>
+                  <%end%>
+                <%end%>
+          </div>
+        </div>
 
-              <div class="row valign-wrapper">
-                <div class="col s2"></div>
-                <div class="col s6"><div class="collection">
+        <div class="col l4 offset-l2 m4 offset-m2 s8 offset-s2">
+          <div class="collection">
                   <a href="#" class="collection-item header active 1b5e20 green darken-4">Listas </a>
                   <%@materials.each do |n|%>
-                    <% if n.tipo==1 and n.subjects_id.to_s == params[:id]%> 
+                    <% if n.tipo==1 and n.subjects_id.to_s == params[:id]%>
                       <a href="/materials/<%=n.id%>/download" class="collection-item 1b5e20 green-text darken-4"><%=n.description%></a>
-                    <%end%>  
-                  <%end%>  
-                  </div></div>
-                <div class="col s2"> </div>      
+                    <%end%>
+                  <%end%>
+          </div>
+        </div>
+      </div>
 
       </article>
 <% if !current_user.nil? and current_user.papel == 2 %>
