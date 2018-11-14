@@ -22,6 +22,9 @@
         <% if archive.tipo == 2 %>
           <td>Vagas para Professores</td>
         <%end%>
+        <% if archive.tipo == 3 %>
+          <td>Nossas Propostas</td>
+        <%end%>
         <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">file_download</i>Download</button>'.html_safe, archive_download_path(archive) %>
         <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">file_download</i>Download</button>'.html_safe, archive_download_path(archive) %></td>
 
