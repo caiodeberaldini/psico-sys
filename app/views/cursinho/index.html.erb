@@ -7,16 +7,13 @@
   </head>
 
   <body>
-
-    <div class="col l12 m6 s0">
-          <div class="card horizontal card medium">
-            <div class="card-image">
-              <img src="/assets/fachada.jpg">
+          <div class="row">
+            <div class="card-image col l6 m8 offset-m2 s12 center">
+              <img src="/assets/fachada.jpg" width="80%">
             </div>
-
-            <%@notices = Notice.all%>
-            <div class="card-stacked">
-              <div class="card-content">
+              <%@notices = Notice.all%>
+              <div class="card col l6 m8 offset-m2 s12 center"
+                <div class="card-content">
                 <h6 id="fonte" class="card-title"><strong>Cursinho da Psico !</strong></h6>
               <%@notices.each do |n|%>
                 <h6><strong><%= n.title %></strong></h6>
@@ -24,10 +21,10 @@
                     <li><%=n.notice_text%>
                   </ul>
               <%end%>
-            </div>
-        </div>
-        </div>
-    </div>
+                </div>
+              </div>
+          </div>
+
   </body>
   <%= render partial: 'application/info_footer' %>
 </html>
