@@ -24,7 +24,14 @@
       </div>
 
       <div class="row container">
-        <div class="col l6 s12 center-align"><a class="waves-effect waves-light btn-large green darken-4"><i class="material-icons left">markunread</i>Carta: Coordenação</a></div>
+      <%@archives = Archive.all%>      
+        <div class="col l6 s12 center-align">
+        <%@archives.each do |n|%>
+        <% if n.tipo==0%>
+        <a href="/archives/<%=n.id%>/download" class="waves-effect waves-light btn-large green darken-4"><i class="material-icons left">markunread</i>Carta: Coordenação</a>
+        <%end%>
+        <%end%>
+        </div>
         <div class="col l6 s12 center-align"><a class="waves-effect waves-light btn-large green darken-4"><i class="material-icons left">laptop</i>Nossas propostas</a></div>
       </div>
 

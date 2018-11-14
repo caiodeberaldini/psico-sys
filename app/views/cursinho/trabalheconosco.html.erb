@@ -21,9 +21,17 @@
           <p>As aulas no cursinho abrangem todas as áreas (humanas, exatas e biológicas) e acontecem no período noturno de segunda a sexta e aos sábados de manhã. A secretaria do cursinho funciona na sala 30 do Centro Acadêmico e as aulas acontecem no Bloco B.</p>
         </div>
         <div class="card-action">
-          <a href="#" class="green-text darken-3">Instruções para contratação</a>
-          <a href="#" class="right green-text darken-3">Vagas disponíveis</a>
+          <%@archives = Archive.all%>
+          <%@archives.each do |n|%>
+          <% if n.tipo==1%>
+            <a href="/archives/<%=n.id%>/download" class="green-text darken-3">Instruções para contratação</a>
+          <%end%>
+          <% if n.tipo==2%>
+            <a href="/archives/<%=n.id%>/download" class="right green-text darken-3">Vagas disponíveis</a>
+          <%end%>
+          <%end%>
         </div>
+        
       </div>
     </div>
     <%= render partial: 'application/info_footer' %>
