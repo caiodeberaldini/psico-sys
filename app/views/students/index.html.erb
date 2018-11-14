@@ -1,4 +1,4 @@
-<h3>Alunos do Cursinho</h3>
+<h3 id="fonte">Alunos do Cursinho</h3>
 
 <table>
     <tbody>
@@ -6,18 +6,26 @@
             <th>Nome</th>
             <th>Endereço</th>
             <th>CPF</th>
+            <th colspan="3"></th>
         </tr>
         <% @students.each do |student|  %>
             <tr>
                 <td><%= student.name %></td>
                 <td><%= student.address %></td>
                 <td><%= student.cpf %></td>
-                <td><%= link_to 'Visualizar', student %></td>
-                <td><%= link_to "Editar", edit_student_url(student) %></td>
-                <td><%= link_to "Deletar", student, method: :delete, data: {confirm: "Tem certeza?"} %></td>
+
+                <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">visibility</i>Visualizar</button>'.html_safe, student %>
+                <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">visibility</i>Visualizar</button>'.html_safe, student %></td>
+
+                <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">edit</i>Editar</button>'.html_safe, edit_student_url(student) %>
+                <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">edit</i>Editar</button>'.html_safe, edit_student_url(student) %></td>
+
+                <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">delete</i>Apagar</button>'.html_safe, student, method: :delete, data: {confirm: "Tem certeza?"} %>
+                <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">delete</i>Apagar</button>'.html_safe, student, method: :delete, data: {confirm: "Tem certeza?"} %></td>
+
             </tr>
         <% end %>
     </tbody>
 </table>
 
-<%= link_to 'Novo Aluno', new_student_path %>
+<%= link_to '<button class="btn green darken-3"><i class="material-icons left">create</i>Novo Aluno</button>'.html_safe, new_student_path %>

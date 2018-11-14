@@ -1,4 +1,4 @@
-<h1>Arquivos do Cursinho</h1>
+<h1 id="fonte">Arquivos do Cursinho</h1>
 
 <table>
   <thead>
@@ -22,10 +22,14 @@
         <% if archive.tipo == 2 %>
           <td>Vagas para Professores</td>
         <%end%>
-        <td><%= link_to 'Download do Arquivo', archive_download_path(archive) %></td>
-        <td><%= link_to 'Visualizar', archive %></td>
-        <td><%= link_to 'Editar', edit_archive_path(archive) %></td>
-        <td><%= link_to 'Deletar', archive, method: :delete, data: { confirm: 'Tem Certeza?' } %></td>
+        <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">file_download</i>Download</button>'.html_safe, archive_download_path(archive) %>
+        <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">file_download</i>Download</button>'.html_safe, archive_download_path(archive) %></td>
+
+        <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">edit</i>Editar</button>'.html_safe, edit_archive_path(archive) %>
+        <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">edit</i>Editar</button>'.html_safe, edit_archive_path(archive) %></td>
+
+        <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">delete</i>Apagar</button>'.html_safe, archive, method: :delete, data: { confirm: 'Tem Certeza?' } %>
+        <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">delete</i>Apagar</button>'.html_safe, archive, method: :delete, data: { confirm: 'Tem Certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -33,4 +37,4 @@
 
 <br>
 
-<%= link_to 'Novo Arquivo', new_archive_path %>
+<%= link_to '<button class="btn green darken-3"><i class="material-icons left">create</i>Novo Arquivo</button>'.html_safe, new_archive_path %>

@@ -1,21 +1,26 @@
-<h3>Avisos do Cursinho da Psico</h3>
+<h3 id="fonte">Avisos do Cursinho</h3>
 
 <table>
     <tbody>
         <tr>
             <th>Título</th>
             <th>Texto</th>
+            <th colspan="2"></th>
         </tr>
         <% @notices.each do |n|  %>
             <tr>
                 <td><%= n.title %></td>
                 <td><%= n.notice_text %></td>
-                <td><%= link_to "Editar", edit_notice_url(n) %></td>
-                <td><%= link_to "Deletar", n, method: :delete, data: {confirm: "Tem certeza?"} %></td>
-                
+
+                <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">edit</i>Editar</button>'.html_safe, edit_notice_url(n) %>
+                <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">edit</i>Editar</button>'.html_safe, edit_notice_url(n) %></td>
+
+                <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">delete</i>Apagar</button>'.html_safe, n, method: :delete, data: {confirm: "Tem certeza?"} %>
+                <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">delete</i>Apagar</button>'.html_safe, n, method: :delete, data: {confirm: "Tem certeza?"} %></td>
+
             </tr>
         <% end %>
     </tbody>
 </table>
 <br>
-<%= link_to 'Novo Aviso', new_notice_path %>
+<%= link_to '<button class="btn green darken-3"><i class="material-icons left">create</i>Novo Aviso</button>'.html_safe, new_notice_path %>

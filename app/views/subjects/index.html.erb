@@ -1,4 +1,4 @@
-<h1>Disciplinas</h1>
+<h1 id="fonte">Disciplinas</h1>
 
 <table>
   <thead>
@@ -12,9 +12,15 @@
     <% @subjects.each do |subject| %>
       <tr>
         <td><%= subject.name %></td>
-        <td><%= link_to 'Visualizar', subject %></td>
-        <td><%= link_to 'Editar', edit_subject_path(subject) %></td>
-        <td><%= link_to 'Deletar', subject, method: :delete, data: { confirm: 'Tem Certeza??' } %></td>
+        <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">visibility</i>Visualizar</button>'.html_safe, subject %>
+        <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">visibility</i>Visualizar</button>'.html_safe, subject %></td>
+
+        <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">edit</i>Editar</button>'.html_safe, edit_subject_path(subject) %>
+        <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">edit</i>Editar</button>'.html_safe, edit_subject_path(subject) %></td>
+
+        <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">delete</i>Apagar</button>'.html_safe, subject, method: :delete, data: { confirm: 'Tem Certeza??' } %>
+        <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">delete</i>Apagar</button>'.html_safe, subject, method: :delete, data: { confirm: 'Tem Certeza??' } %></td>
+
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +28,4 @@
 
 <br>
 
-<%= link_to 'Nova Disciplina', new_subject_path %>
+<%= link_to '<button class="btn green darken-3"><i class="material-icons left">create</i>Nova Disciplina</button>'.html_safe, new_subject_path %>

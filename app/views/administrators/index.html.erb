@@ -1,18 +1,21 @@
-<h3>Administradores do Cursinho</h3>
+<h3 id="fonte">Administradores do Cursinho</h3>
 
 <table>
     <tbody>
         <tr>
             <th>E-Mail</th>
+            <th colspan="2"></th>
         </tr>
         <% @administrators.each do |administrator|  %>
             <tr>
                 <td><%= administrator.email %></td>
-                <td><%= link_to "Editar", edit_administrator_url(administrator) %></td>
-                <td><%= link_to "Deletar", administrator, method: :delete, data: {confirm: "Tem certeza?"} %></td>
+                <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">edit</i>Editar</button>'.html_safe, edit_administrator_url(administrator) %>
+                  <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">edit</i>Editar</button>'.html_safe, edit_administrator_url(administrator) %></td>
+                <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">delete</i>Apagar</button>'.html_safe, administrator, method: :delete, data: {confirm: "Tem certeza?"} %>
+                <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">delete</i>Apagar</button>'.html_safe, administrator, method: :delete, data: {confirm: "Tem certeza?"} %></td>
             </tr>
         <% end %>
     </tbody>
 </table>
 
-<%= link_to 'Novo Administrador', new_administrator_path %>
+<%= link_to '<button class="btn green darken-3"><i class="material-icons left">create</i>Novo Administrador</button>'.html_safe, new_administrator_path %>

@@ -1,4 +1,4 @@
-<h3>Professores do Cursinho</h3>
+<h3 id="fonte">Professores do Cursinho</h3>
 
 <table>
     <tbody>
@@ -6,18 +6,25 @@
             <th>Nome</th>
             <th>Endereço</th>
             <th>Disciplina</th>
+            <th colspan="3"></th>
         </tr>
         <% @teachers.each do |teacher|  %>
             <tr>
                 <td><%= teacher.name %></td>
                 <td><%= teacher.address %></td>
                 <td><%= Subject.find(teacher.disciplina).name %></td>
-                <td><%= link_to 'Visualizar', teacher %></td>
-                <td><%= link_to "Editar", edit_teacher_url(teacher) %></td>
-                <td><%= link_to "Deletar", teacher, method: :delete, data: {confirm: "Tem certeza?"} %></td>
+
+                <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">visibility</i>Visualizar</button>'.html_safe, teacher %>
+                <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">visibility</i>Visualizar</button>'.html_safe, teacher %></td>
+
+                <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">edit</i>Editar</button>'.html_safe, edit_teacher_url(teacher) %>
+                <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">edit</i>Editar</button>'.html_safe, edit_teacher_url(teacher) %></td>
+
+                <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">delete</i>Apagar</button>'.html_safe, teacher, method: :delete, data: {confirm: "Tem certeza?"} %>
+                <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">delete</i>Apagar</button>'.html_safe, teacher, method: :delete, data: {confirm: "Tem certeza?"} %></td>
             </tr>
         <% end %>
     </tbody>
 </table>
 
-<%= link_to 'Novo Professor', new_teacher_path %>
+<%= link_to '<button class="btn green darken-3"><i class="material-icons left">create</i>Novo Professor</button>'.html_safe, new_teacher_path %>
