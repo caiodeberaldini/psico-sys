@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :matriculas
   resources :archives
   get '/login', to: "sessions#new", as: "login"
   get '/logout', to: "sessions#destroy", as: "logout"

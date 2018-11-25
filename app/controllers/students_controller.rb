@@ -32,7 +32,7 @@ class StudentsController < ApplicationController
   
       respond_to do |format|
         if @student.save
-          format.html { redirect_to new_student_user_url(@student) }
+          format.html { redirect_to home_path }
           #format.json { render :show, status: :created, location: @student }
         else
           format.html { render :new }
