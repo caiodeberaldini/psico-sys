@@ -7,6 +7,11 @@ A seguir constam os dados referentes à matrícula:
 	  Endereço: <%= @matricula.address %>
 	  Cidade: <%= @matricula.city %>
 	  Estado: <%= @matricula.state %>
-	  Necessidade de bolsa: <%= @matricula.scholarship_need %>
+	  Necessidade de bolsa: 
+		<% if @matricula.scholarship_need == 0 %>
+			Não necessita
+		<% else %>
+			Necessita
+		<% end %>
 	  Email: <%= @matricula.email %>
 	  Classe <%= @matricula.classe %>

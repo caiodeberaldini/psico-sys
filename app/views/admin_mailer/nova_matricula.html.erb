@@ -4,19 +4,23 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <p>
-      A seguir constam os dados referentes à matrícula: 
-	  Nome: <%= @matricula.name %> 
-	  Data de Nascimento: <%= @matricula.birth_date %> 
-	  CPF: <%= @matricula.cpf %> &#10;
-	  Telefone: <%= @matricula.phone %> 
-	  Celular: <%= @matricula.cell_phone %> 
-	  Endereço: <%= @matricula.address %> 
-	  Cidade: <%= @matricula.city %> 
-	  Estado: <%= @matricula.state %> 
-	  Necessidade de bolsa: <%= @matricula.scholarship_need %> 
-	  Email: <%= @matricula.email %> 
-	  Turma <%= @matricula.classe %> 
-    </p>
+    
+    <p> A seguir constam os dados referentes à matrícula: 
+	<p>  Nome: <%= @matricula.name %> </p>
+	<p>  Data de Nascimento: <%= @matricula.birth_date %> </p> 
+	<p>  CPF: <%= @matricula.cpf %> </p>
+	<p>  Telefone: <%= @matricula.phone %> </p>
+	<p>  Celular: <%= @matricula.cell_phone %> </p>
+	<p>  Endereço: <%= @matricula.address %> </p> 
+	<p>  Cidade: <%= @matricula.city %> </p>
+	<p>  Estado: <%= @matricula.state %> </p>
+	<p>  Necessidade de bolsa: 
+		<% if @matricula.scholarship_need == 0 %>
+			Não necessita
+		<% else %>
+			Necessita
+		<% end %></p>
+	<p>  Email: <%= @matricula.email %> </p>
+	<p>  Turma <%= @matricula.classe %> </p>
   </body>
 </html>

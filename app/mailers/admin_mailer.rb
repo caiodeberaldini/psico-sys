@@ -1,6 +1,6 @@
 class AdminMailer < ActionMailer::Base
 	default to: -> {Administrator.pluck(:email)},
-			from: 'rc.araripe3@gmail.com'
+			from: 'psico.cursinho.teste@gmail.com'
 			
 	def nova_matricula(matricula)
 		@matricula = matricula
