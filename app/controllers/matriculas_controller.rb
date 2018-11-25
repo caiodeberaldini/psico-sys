@@ -30,7 +30,7 @@ class MatriculasController < ApplicationController
   
       respond_to do |format|
         if @matricula.save
-		  AdminMailer.nova_matricula(@matricula).deliver
+          AdminMailer.nova_matricula(@matricula).deliver
           format.html { redirect_to '/home' }
 		  @matricula.destroy
           #format.json { render :show, status: :created, location: @Matricula }
