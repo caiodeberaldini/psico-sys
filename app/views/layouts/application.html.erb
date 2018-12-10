@@ -12,7 +12,7 @@
 
     <ul id="dropdown-disciplinas-nav" class="dropdown-content">
       <% Subject.all.each do |subject| %>
-        <li><a href="/subjects/<%= subject.id %>" class="green darken-3 white-text"><%= subject.name %></a></li>
+        <li><a href="/subjects/<%= subject.id %>" class="green-text darken-3"><%= subject.name %></a></li>
       <% end %>
     </ul>
 
@@ -88,7 +88,7 @@
             <% end %>
             <li><a href="/logout" class="hide-on-med-and-down waves-effect orange accent-3 btn-large">Sair</a></li>
           <% end %>
-          <li><a><img src="/assets/logo.png" width="70"></a></li>
+          <li><img src="/assets/logo.png" width="70"></li>
         </ul>
       </div>
     </nav>
