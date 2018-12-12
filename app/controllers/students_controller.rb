@@ -12,7 +12,11 @@ class StudentsController < ApplicationController
     # GET /students/1
     # GET /students/1.json
     def show
-      @student = Student.find(params[:id])
+      begin
+        @student = Student.find(params[:id])
+      rescue StandardError
+        redirect_to students_url, notice: "Estudante inexistente" 
+      end
     end
   
     # GET /students/new
@@ -30,14 +34,18 @@ class StudentsController < ApplicationController
     def create
       @student = Student.new(student_params)
   
-      respond_to do |format|
-        if @student.save
-          format.html { redirect_to home_path }
-          #format.json { render :show, status: :created, location: @student }
-        else
-          format.html { render :new }
-          format.json { render json: @student.errors, status: :unprocessable_entity }
+      begin
+        respond_to do |format|
+          if @student.save
+            format.html { redirect_to new_student_user_url(@student) }
+            #format.json { render :show, status: :created, location: @student }
+          else
+            format.html { render :new }
+            format.json { render json: @student.errors, status: :unprocessable_entity }
+          end
         end
+      rescue StandardError
+        redirect_to new_student_url(@student), notice: "Preencha todos os campos obrigatórios (*)"
       end
     end
   
@@ -68,7 +76,11 @@ class StudentsController < ApplicationController
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_student
-        @student = Student.find(params[:id])
+        begin
+          @student = Student.find(params[:id])
+        rescue StandardError
+          redirect_to students_url, notice: "Estudante inexistente" 
+        end
       end
   
       # Never trust parameters from the scary internet, only allow the white list through.

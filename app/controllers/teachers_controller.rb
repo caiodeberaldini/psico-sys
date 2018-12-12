@@ -12,7 +12,11 @@ class TeachersController < ApplicationController
   # GET /teachers/1
   # GET /teachers/1.json
   def show
-    @teacher = Teacher.find(params[:id])
+    begin
+      @teacher = Teacher.find(params[:id])
+    rescue StandardError
+      redirect_to teachers_url, notice: "Professor inexistente" 
+    end
   end
 
   # GET /teachers/new
@@ -30,15 +34,20 @@ class TeachersController < ApplicationController
   def create
     @teacher = Teacher.new(teacher_params)
 
-    respond_to do |format|
-      if @teacher.save
-        format.html { redirect_to new_teacher_user_url(@teacher) }
-        #format.json { render :show, status: :created, location: @teacher }
-      else
-        format.html { render :new }
-        format.json { render json: @teacher.errors, status: :unprocessable_entity }
+    begin
+      respond_to do |format|
+        if @teacher.save
+          format.html { redirect_to new_teacher_user_url(@teacher) }
+          #format.json { render :show, status: :created, location: @teacher }
+        else
+          format.html { render :new }
+          format.json { render json: @teacher.errors, status: :unprocessable_entity }
+        end
       end
+    rescue StandardError
+      redirect_to new_teacher_url(@teacher), notice: "Preencha todos os campos obrigatórios (*)"
     end
+
   end
 
   # PATCH/PUT /teachers/1
@@ -68,7 +77,11 @@ class TeachersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_teacher
-      @teacher = Teacher.find(params[:id])
+      begin
+        @teacher = Teacher.find(params[:id])
+      rescue StandardError
+        redirect_to teachers_url, notice: "Professor inexistente" 
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
