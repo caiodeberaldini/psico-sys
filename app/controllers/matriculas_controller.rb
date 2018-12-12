@@ -7,6 +7,7 @@ class MatriculasController < ApplicationController
     def index
       @matriculas = Matricula.all
 	  @matricula_on = @@matricula_on
+	  
     end
   
     # GET /matriculas/1

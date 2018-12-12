@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
-  @@matricula_on = false
+  @@matricula_on = true
   
 
   def current_user
@@ -22,10 +22,3 @@ class ApplicationController < ActionController::Base
     redirect_to root_url if current_user.nil? or current_user.papel != 1
   end
 end
-#request.original_url
-
-#colocar verificação para ver se o professor é da disciplina da página que ele ta acessando
-#fzer combo box para o campo "disciplina" dos professores, para poder fazer a verificação. No combo
-#tem que estar escrito que nem no url
-
-#and ""current_user.role.disciplina != ""

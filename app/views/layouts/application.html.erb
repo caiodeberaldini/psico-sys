@@ -6,13 +6,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="shortcut icon" href="/assets/logo_icon.ico">
   </head>
 
   <body>
 
     <ul id="dropdown-disciplinas-nav" class="dropdown-content">
       <% Subject.all.each do |subject| %>
-        <li><a href="/subjects/<%= subject.id %>" class="green darken-3 white-text"><%= subject.name %></a></li>
+        <li><a href="/subjects/<%= subject.id %>" class="green-text darken-3"><%= subject.name %></a></li>
       <% end %>
     </ul>
 
@@ -23,7 +24,6 @@
     </ul>
 
     <ul id="dropdown-adm-nav" class="dropdown-content">
-      <li><a href="/apostilles" class="green-text darken-3">Apostilas</a></li>
       <li><a href="/teachers" class="green-text darken-3">Professores</a></li>
       <li><a href="/students" class="green-text darken-3">Alunos</a></li>
       <li><a href="/administrators" class="green-text darken-3">Outros Administradores</a></li>
@@ -43,7 +43,6 @@
     </ul>
 
     <ul id="dropdown-adm-side" class="dropdown-content">
-      <li><a href="/apostilles" >Apostilas</a></li>
       <li><a href="/teachers" >Professores</a></li>
       <li><a href="/students" >Alunos</a></li>
       <li><a href="/administrators" >Outros Administradores</a></li>
@@ -90,7 +89,7 @@
             <% end %>
             <li><a href="/logout" class="hide-on-med-and-down waves-effect orange accent-3 btn-large">Sair</a></li>
           <% end %>
-          <li><a><img src="/assets/logo.png" width="70"></a></li>
+          <li><img src="/assets/logo.png" width="70"></li>
         </ul>
       </div>
     </nav>
