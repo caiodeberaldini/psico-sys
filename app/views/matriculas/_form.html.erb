@@ -12,64 +12,64 @@
     <% end %>
 	
 	<% if @matricula_on == true %>
-    <div class=field>
-        <%= form.label :name, 'Nome Completo*' %><br />
-        <%= form.text_field :name %>
-    </div>
+        <div class=field>
+            <%= form.label :name, 'Nome Completo*' %><br />
+            <%= form.text_field :name %>
+        </div>
 
-    <div class=field>
-        <%= form.label :birth_date, 'Data de Nascimento*' %><br />
-        <%= form.date_field :birth_date %>
-    </div>
+        <div class=field>
+            <%= form.label :birth_date, 'Data de Nascimento*' %><br />
+            <%= form.date_field :birth_date %>
+        </div>
 
-    <div class=field>
-        <%= form.label :cpf, 'CPF*' %><br />
-        <%= form.text_field :cpf %>
-    </div>
+        <div class=field>
+            <%= form.label :cpf, 'CPF*' %><br />
+            <%= form.text_field :cpf %>
+        </div>
 
-    <div class=field>
-        <%= form.label :phone, 'Telefone Residencial' %><br />
-        <%= form.text_field :phone %>
-    </div>
+        <div class=field>
+            <%= form.label :phone, 'Telefone Residencial' %><br />
+            <%= form.text_field :phone %>
+        </div>
 
-    <div class=field>
-        <%= form.label :cell_phone, 'Telefone Celular*' %><br />
-        <%= form.text_field :cell_phone %>
-    </div>
+        <div class=field>
+            <%= form.label :cell_phone, 'Telefone Celular*' %><br />
+            <%= form.text_field :cell_phone %>
+        </div>
 
-    <div class=field>
-        <%= form.label :address, 'Endereço*' %><br />
-        <%= form.text_field :address %>
-    </div>
+        <div class=field>
+            <%= form.label :address, 'Endereço*' %><br />
+            <%= form.text_field :address %>
+        </div>
 
-    <div class=field>
-        <%= form.label :city, 'Cidade*' %><br />
-        <%= form.text_field :city %>
-    </div>
+        <div class=field>
+            <%= form.label :city, 'Cidade*' %><br />
+            <%= form.text_field :city %>
+        </div>
 
-    <div class=field>
-        <%= form.label :state, 'Estado*' %><br />
-        <%= form.text_field :state %>
-    </div>
+        <div class=field>
+            <%= form.label :state, 'Estado*' %><br />
+            <%= form.text_field :state %>
+        </div>
 
-    <div class=field>
-        <%= form.label :scholarship_need, 'Necessidade de Bolsa*' %><br />
-        <%= form.select(:scholarship_need, [['Não Necessita de Bolsa', 0], ['Necessita de Bolsa', 1]], {:prompt => "Selecione uma opção"}, {:class => 'browser-default'}) %>
-    </div>
+        <div class=field>
+            <%= form.label :scholarship_need, 'Necessidade de Bolsa*' %><br />
+            <%= form.select(:scholarship_need, [['Não Necessita de Bolsa', 0], ['Necessita de Bolsa', 1]], {:prompt => "Selecione uma opção"}, {:class => 'browser-default'}) %>
+        </div>
 
-    <div class=field>
-        <%= form.label :email, 'E-Mail*' %><br />
-        <%= form.text_field :email %>
-    </div>
+        <div class=field>
+            <%= form.label :email, 'E-Mail*' %><br />
+            <%= form.text_field :email %>
+        </div>
 
-    <div class=field>
-        <%= form.label :classe, 'Turma*' %><br />
-        <%= form.select(:classe, [['Extensivo', 'Extensivo'], ['Intensivo', 'Intensivo']], {:prompt => "Selecione uma opção"}, {:class => 'browser-default'}) %>
-    </div>
+        <div class=field>
+            <%= form.label :classe, 'Turma*' %><br />
+            <%= form.select(:classe, [['Extensivo', 'Extensivo'], ['Intensivo', 'Intensivo']], {:prompt => "Selecione uma opção"}, {:class => 'browser-default'}) %>
+        </div>
 
-    <div class="actions">
-        <%= form.submit "Enviar Matrícula", class: "btn green darken-3" %>
-    </div>
+        <div class="actions">
+            <%= form.submit "Enviar Matrícula", class: "btn green darken-3" %>
+        </div>
 	
 	<% else %>
 		<p>Sentimos muito, período de matrículas encerrado!</p>

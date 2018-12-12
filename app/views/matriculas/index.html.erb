@@ -1,14 +1,13 @@
-<h3 id="fonte">Ativação e Desativação de Matrícula</h3>
+<% if @matricula_on == true %>
+	<% MatriculasController.class_variable_set(:@@matricula_on, false) %>
+<% else %>
+	<% MatriculasController.class_variable_set(:@@matricula_on, true) %>
+<% end %>
 
-<body>
-	<% if @matricula_on == true %>
-		<p>Deseja desativar a página de matrículas?</p>
-		<a href="/matriculas" class="waves-effect darken green 3 accent-3 btn-large"><% @matricula_on = false %>Desativar</a>
-
-	<% else %>
-		<p>Deseja ativar a página de matrículas?</p>
-		<a href="/matriculas" class="waves-effect darken green 3 accent-3 btn-large"><% @matricula_on = true %>Ativar</a>
-	<% end %>
-</body>
+<% if @matricula_on == true %>
+	<h5 id="fonte1">Matrícula Desativada</h5>
+<% else %>
+	<h5 id="fonte1">Matrícula Ativada</h5>
+<% end %>
 
 

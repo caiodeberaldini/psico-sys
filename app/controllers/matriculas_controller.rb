@@ -1,13 +1,10 @@
 class MatriculasController < ApplicationController
 	before_action :isAdmin, only: [:index]
-	
-
+  
 	# GET /matriculas
     # GET /matriculas.json
     def index
-      @matriculas = Matricula.all
-	  @matricula_on = @@matricula_on
-	  
+      @matricula_on = MatriculasController.class_variable_get(:@@matricula_on)
     end
   
     # GET /matriculas/1
@@ -18,8 +15,8 @@ class MatriculasController < ApplicationController
   
     # GET /matriculas/new
     def new
+      @matricula_on = MatriculasController.class_variable_get(:@@matricula_on)
       @matricula = Matricula.new
-	  @matricula_on = @@matricula_on
     end
   
     # GET /matriculas/1/edit
