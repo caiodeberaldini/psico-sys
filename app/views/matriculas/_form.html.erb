@@ -10,7 +10,8 @@
         </ul>
     </div>
     <% end %>
-
+	
+	<% if @matricula_on == true %>
     <div class=field>
         <%= form.label :name, 'Nome Completo*' %><br />
         <%= form.text_field :name %>
@@ -69,4 +70,8 @@
     <div class="actions">
         <%= form.submit "Enviar Matrícula", class: "btn btn-primary" %>
     </div>
+	
+	<% else %>
+		<p>Sentimos muito, período de matrículas encerrado!</p>
+	<% end %>
 <% end %>

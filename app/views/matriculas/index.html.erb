@@ -1,31 +1,14 @@
-<h3 id="fonte">Alunos do Cursinho</h3>
+<h3 id="fonte">Ativação e Desativação de Matrícula</h3>
 
-<table>
-    <tbody>
-        <tr>
-            <th>Nome</th>
-            <th>Endereço</th>
-            <th>CPF</th>
-            <th colspan="3"></th>
-        </tr>
-        <% @matriculas.each do |matricula|  %>
-            <tr>
-                <td><%= matricula.name %></td>
-                <td><%= matricula.address %></td>
-                <td><%= matricula.cpf %></td>
+<body>
+	<% if @matricula_on == true %>
+		<p>Deseja desativar a página de matrículas?</p>
+		<a href="/matriculas" class="waves-effect darken green 3 accent-3 btn-large"><% @matricula_on = false %>Desativar</a>
 
-                <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">visibility</i>Visualizar</button>'.html_safe, matricula %>
-                <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">visibility</i>Visualizar</button>'.html_safe, matricula %></td>
+	<% else %>
+		<p>Deseja ativar a página de matrículas?</p>
+		<a href="/matriculas" class="waves-effect darken green 3 accent-3 btn-large"><% @matricula_on = true %>Ativar</a>
+	<% end %>
+</body>
 
-                <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">edit</i>Editar</button>'.html_safe, edit_matricula_url(matricula) %>
-                <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">edit</i>Editar</button>'.html_safe, edit_matricula_url(matricula) %></td>
 
-                <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">delete</i>Apagar</button>'.html_safe, matricula, method: :delete, data: {confirm: "Tem certeza?"} %>
-                <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">delete</i>Apagar</button>'.html_safe, matricula, method: :delete, data: {confirm: "Tem certeza?"} %></td>
-
-            </tr>
-        <% end %>
-    </tbody>
-</table>
-
-<%= link_to '<button class="btn green darken-3"><i class="material-icons left">create</i>Novo Aluno</button>'.html_safe, new_matricula_path %>
