@@ -1,17 +1,27 @@
 A seguir constam os dados referentes à matrícula:
 	  Nome: <%= @matricula.name %>
 	  Data de Nascimento: <%= @matricula.birth_date %>
-	  CPF: <%= @matricula.cpf %>
+		RG: <%= @matricula.rg %>
+		CPF: <%= @matricula.cpf %>
 	  Telefone: <%= @matricula.phone %>
 	  Celular: <%= @matricula.cell_phone %>
 	  Endereço: <%= @matricula.address %>
 	  Cidade: <%= @matricula.city %>
 	  Estado: <%= @matricula.state %>
+		Email: <%= @matricula.email %>
+		Escola em que completou o Ensino Médio: <%= @matricula.lugar_escolaridade %> 
+		Tipo de Ensino Médio: <%= @matricula.escolaridade %> 
+		Ano em que concluiu o Ensino Médio: <%= @matricula.ano_escolaridade %> 
+		Custo com transportes para o Cursinho: <%= @matricula.custo_transporte %> 
+		Tempo gasto para a jornada do Cursinho: <%= @matricula.tempo_transporte %> 
+		Acesso à internet: <%= @matricula.acesso_internet %> 
+		Declaração de cor: <%= @matricula.declaracao_cor %> 
+		Sexo: <%= @matricula.declaracao_sexo %> 
+		Declaração do candidato de transexualidade: <%= @matricula.declaracao_trans %> 
 	  Necessidade de bolsa: 
 		<% if @matricula.scholarship_need == 0 %>
 			Não necessita
 		<% else %>
 			Necessita
 		<% end %>
-	  Email: <%= @matricula.email %>
 	  Classe <%= @matricula.classe %>

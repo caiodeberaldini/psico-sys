@@ -76,6 +76,7 @@ class MatriculasController < ApplicationController
       # Never trust parameters from the scary internet, only allow the white list through.
       def matricula_params
         params.require(:matricula).permit(:name, :birth_date, :cpf, :phone, :cell_phone, :address, :city, 
-        :state, :scholarship_need, :email, :classe)
+        :state, :scholarship_need, :email, :classe, :rg, :lugar_escolaridade, :escolaridade, :ano_escolaridade,
+        :custo_transporte, :tempo_transporte, :acesso_internet, :declaracao_cor, :declaracao_sexo, :declaracao_trans)
       end
 end

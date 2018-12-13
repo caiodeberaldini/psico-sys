@@ -23,6 +23,11 @@
         </div>
 
         <div class=field>
+            <%= form.label :rg, 'RG*' %><br />
+            <%= form.text_field :rg %>
+        </div>
+
+        <div class=field>
             <%= form.label :cpf, 'CPF*' %><br />
             <%= form.text_field :cpf %>
         </div>
@@ -53,13 +58,58 @@
         </div>
 
         <div class=field>
-            <%= form.label :scholarship_need, 'Necessidade de Bolsa*' %><br />
-            <%= form.select(:scholarship_need, [['Não Necessita de Bolsa', 0], ['Necessita de Bolsa', 1]], {:prompt => "Selecione uma opção"}, {:class => 'browser-default'}) %>
+            <%= form.label :email, 'E-Mail*' %><br />
+            <%= form.text_field :email %>
         </div>
 
         <div class=field>
-            <%= form.label :email, 'E-Mail*' %><br />
-            <%= form.text_field :email %>
+            <%= form.label :lugar_escolaridade, 'Em qual escola você completou/completará o Ensino Médio?*' %><br />
+            <%= form.text_field :lugar_escolaridade %>
+        </div>
+
+        <div class=field>
+            <%= form.label :ano_escolaridade, 'Em que ano você completou ou completará o Ensino Médio?*' %><br />
+            <%= form.text_field :ano_escolaridade %>
+        </div>
+
+        <div class=field>
+            <%= form.label :escolaridade, 'Você realizou a maior parte de seus estudos em:*' %><br />
+            <%= form.select(:escolaridade, [['Ensino Médio Regular Público', 'Ensino Médio Regular Público'], ['Ensino Médio Técnico Público', 'Ensino Médio Técnico Público'], ['Ensino Médio Supletivo Público (EJA/CIEJA)','Ensino Médio Supletivo Público (EJA/CIEJA)'], ['Ensino Médio Regular Privado','Ensino Médio Regular Privado'], ['Ensino Médio Técnico Privado','Ensino Médio Técnico Privado'], ['Ensino Médio Supletivo Privado','Ensino Médio Supletivo Privado']], {:prompt => "Selecione uma opção"}, {:class => 'browser-default'}) %>
+        </div>
+
+        <div class=field>
+            <%= form.label :custo_transporte, 'Qual custo mensal com transporte você acha que terá para ir e voltar do Cursinho? (ex: R$50,00)*' %><br />
+            <%= form.text_field :custo_transporte %>
+        </div>
+
+        <div class=field>
+            <%= form.label :tempo_transporte, 'Quanto tempo você espera gastar para ir e voltar do Cursinho? (ex:1h, 30min, 1h30min)*' %><br />
+            <%= form.text_field :tempo_transporte %>
+        </div>
+
+        <div class=field>
+            <%= form.label :acesso_internet, 'Qual é seu acesso à internet?*' %><br />
+            <%= form.select(:acesso_internet, [['Tenho acesso à internet em casa', 'Tenho acesso à internet em casa'], ['Não tenho acesso à internet em casa', 'Não tenho acesso à internet em casa'], ['Acesso todos os dias da semana','Acesso todos os dias da semana'], ['Acesso de 3 a 6 dias da semana','Acesso de 3 a 6 dias da semana'], ['Acesso menos de 2 dias da semana','Acesso menos de 2 dias da semana'], ['Acesso menos de 3 vezes por mês','Acesso menos de 3 vezes por mês'], ['Não acesso a internet','Não acesso a internet']], {:prompt => "Selecione uma opção"}, {:class => 'browser-default'}) %>
+        </div>
+
+        <div class=field>
+            <%= form.label :declaracao_cor, 'Como você se declara?*' %><br />
+            <%= form.select(:declaracao_cor, [['Pardo(a)', 'Pardo(a)'], ['Negro(a)', 'Negro(a)'], ['Branco(a)','Branco(a)'], ['Amarelo(a)','Amarelo(a)'], ['Indígena','Indígena'], ['Prefiro não declarar','Prefiro não declarar']], {:prompt => "Selecione uma opção"}, {:class => 'browser-default'}) %>
+        </div>
+
+        <div class=field>
+            <%= form.label :declaracao_sexo, 'Sexo*' %><br />
+            <%= form.select(:declaracao_sexo, [['Feminino', 'Feminino'], ['Masculino', 'Masculino'], ['Outro','Outro']], {:prompt => "Selecione uma opção"}, {:class => 'browser-default'}) %>
+        </div>
+
+        <div class=field>
+            <%= form.label :declaracao_trans, 'Você se autodeclara transgênero(a) ou travesti?*' %><br />
+            <%= form.select(:declaracao_trans, [['Não', 'Não'], ['Sim', 'Sim']], {:prompt => "Selecione uma opção"}, {:class => 'browser-default'}) %>
+        </div>
+
+        <div class=field>
+            <%= form.label :scholarship_need, 'Necessidade de Bolsa*' %><br />
+            <%= form.select(:scholarship_need, [['Não Necessita de Bolsa', 0], ['Necessita de Bolsa', 1]], {:prompt => "Selecione uma opção"}, {:class => 'browser-default'}) %>
         </div>
 
         <div class=field>

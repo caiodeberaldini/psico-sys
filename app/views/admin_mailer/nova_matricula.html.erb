@@ -5,22 +5,32 @@
   </head>
   <body>
     
-    <p> A seguir constam os dados referentes à matrícula: 
-	<p>  Nome: <%= @matricula.name %> </p>
-	<p>  Data de Nascimento: <%= @matricula.birth_date %> </p> 
-	<p>  CPF: <%= @matricula.cpf %> </p>
-	<p>  Telefone: <%= @matricula.phone %> </p>
-	<p>  Celular: <%= @matricula.cell_phone %> </p>
-	<p>  Endereço: <%= @matricula.address %> </p> 
-	<p>  Cidade: <%= @matricula.city %> </p>
-	<p>  Estado: <%= @matricula.state %> </p>
-	<p>  Necessidade de bolsa: 
+    <p> A seguir constam os dados referentes à matrícula:</b> 
+	<p>  <b>Nome:</b> <%= @matricula.name %> </p>
+	<p>  <b>Data de Nascimento:</b> <%= @matricula.birth_date %> </p> 
+	<p>  <b>RG:</b> <%= @matricula.rg %> </p>
+	<p>  <b>CPF:</b> <%= @matricula.cpf %> </p>
+	<p>  <b>Telefone:</b> <%= @matricula.phone %> </p>
+	<p>  <b>Celular:</b> <%= @matricula.cell_phone %> </p>
+	<p>  <b>Endereço:</b> <%= @matricula.address %> </p> 
+	<p>  <b>Cidade:</b> <%= @matricula.city %> </p>
+	<p>  <b>Estado:</b> <%= @matricula.state %> </p>
+	<p>  <b>Email:</b> <%= @matricula.email %> </p>
+	<p>  <b>Escola em que completou o Ensino Médio:</b> <%= @matricula.lugar_escolaridade %> </p>
+	<p>  <b>Tipo de Ensino Médio:</b> <%= @matricula.escolaridade %> </p>
+	<p>  <b>Ano em que concluiu o Ensino Médio:</b> <%= @matricula.ano_escolaridade %> </p>
+	<p>  <b>Custo com transportes para o Cursinho:</b> <%= @matricula.custo_transporte %> </p>
+	<p>  <b>Tempo gasto para a jornada do Cursinho:</b> <%= @matricula.tempo_transporte %> </p>
+	<p>  <b>Acesso à internet:</b> <%= @matricula.acesso_internet %> </p>
+	<p>  <b>Declaração de cor:</b> <%= @matricula.declaracao_cor %> </p>
+	<p>  <b>Sexo:</b> <%= @matricula.declaracao_sexo %> </p>
+	<p>  <b>Declaração do candidato de transexualidade:</b> <%= @matricula.declaracao_trans %> </p>
+	<p>  <b>Necessidade de bolsa:</b> 
 		<% if @matricula.scholarship_need == 0 %>
 			Não necessita
 		<% else %>
 			Necessita
 		<% end %></p>
-	<p>  Email: <%= @matricula.email %> </p>
-	<p>  Turma <%= @matricula.classe %> </p>
+	<p>  <b>Turma:</b> <%= @matricula.classe %> </p>
   </body>
 </html>

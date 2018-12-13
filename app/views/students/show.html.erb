@@ -11,6 +11,11 @@
 </p>
 
 <p>
+    <strong>RG:</strong>
+    <%= @student.rg %>
+</p>
+
+<p>
     <strong>CPF:</strong>
     <%= @student.cpf %>
 </p>
@@ -76,6 +81,12 @@
     <strong>Classe:</strong>
     <%= @student.classe %>
 </p>
+
+<p>
+    <strong>Número de Matrícula:</strong>
+    <%= @student.numero_matricula %>
+</p>
+
 
 <%= render partial: "users/user", locals: {role: @student} %>
 
