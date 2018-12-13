@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" href="/assets/logo_icon.ico">
   </head>
 
@@ -64,7 +65,7 @@
     <nav id="navegacao" >
       <div class="nav-wrapper green darken-3">
         <ul id="nav-mobile" class="left">
-          <li><a data-target="slide-out" class="sidenav-trigger"><i class="material-icons green darken-3 hide-on-large-only">menu</i></a></li>
+          <li><a data-target="slide-out" class="sidenav-trigger" style="position: relative;"><i class="material-icons green darken-3 hide-on-large-only">menu</i></a></li>
 
           <li><a href="/home" class="hide-on-med-and-down" style="font-weight: bold;">Home</a></li>
           <li><a href="/quemsomos" class="hide-on-med-and-down" style="font-weight: bold;">Quem somos?</a></li>
