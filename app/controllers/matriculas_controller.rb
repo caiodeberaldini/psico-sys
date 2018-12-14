@@ -77,6 +77,7 @@ class MatriculasController < ApplicationController
       def matricula_params
         params.require(:matricula).permit(:name, :birth_date, :cpf, :phone, :cell_phone, :address, :city, 
         :state, :scholarship_need, :email, :classe, :rg, :lugar_escolaridade, :escolaridade, :ano_escolaridade,
-        :custo_transporte, :tempo_transporte, :acesso_internet, :declaracao_cor, :declaracao_sexo, :declaracao_trans)
+        :custo_transporte, :tempo_transporte, :acesso_internet, :declaracao_cor, :declaracao_sexo, :declaracao_trans,
+        :egresso, :refugiado)
       end
 end

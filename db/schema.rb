@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181213124751) do
+ActiveRecord::Schema.define(version: 20181214172317) do
 
   create_table "administrators", force: :cascade do |t|
     t.string "email", null: false
@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(version: 20181213124751) do
     t.string "declaracao_cor"
     t.string "declaracao_sexo"
     t.string "declaracao_trans"
+    t.string "egresso"
+    t.string "refugiado"
   end
 
   create_table "notices", force: :cascade do |t|

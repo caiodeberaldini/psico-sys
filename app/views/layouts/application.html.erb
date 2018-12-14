@@ -29,9 +29,10 @@
       <li><a href="/students" class="green-text darken-3">Alunos</a></li>
       <li><a href="/administrators" class="green-text darken-3">Outros Administradores</a></li>
       <li><a href="/subjects" class="green-text darken-3">Disciplinas</a></li>
+      <li><a href="/apostilles" class="green-text darken-3">Apostilas</a></li>
       <li><a href="/notices" class="green-text darken-3">Avisos</a></li>
       <li><a href="/archives" class="green-text darken-3">Arquivos do Cursinho</a></li>
-      <li><a href="/matriculas" class="green-text darken-3">Ativar/Desativar Matrícula</a></li>
+      <li><a href="/matriculas" class="green-text darken-3">Ativar/Desativar Inscrição</a></li>
     </ul>
 
     <ul id="dropdown-prof-nav" class="dropdown-content">
@@ -48,9 +49,10 @@
       <li><a href="/students" >Alunos</a></li>
       <li><a href="/administrators" >Outros Administradores</a></li>
       <li><a href="/subjects" >Disciplinas</a></li>
+      <li><a href="/apostilles" >Apostilas</a></li>
       <li><a href="/notices" >Avisos</a></li>
       <li><a href="/archives" >Arquivos do Cursinho</a></li>
-	    <li><a href="/matriculas" class="green-text darken-3">Ativar/Desativar Matrícula</a></li>
+	    <li><a href="/matriculas" class="green-text darken-3">Ativar/Desativar Inscrição</a></li>
     </ul>
 
     <ul id="dropdown-prof-side" class="dropdown-content">
@@ -70,7 +72,7 @@
           <li><a href="/home" class="hide-on-med-and-down" style="font-weight: bold;">Home</a></li>
           <li><a href="/quemsomos" class="hide-on-med-and-down" style="font-weight: bold;">Quem somos?</a></li>
           <li><a class="dropdown-trigger hide-on-med-and-down" data-target="dropdown-disciplinas-nav" style="font-weight: bold;">Disciplinas<i class="material-icons right">arrow_drop_down</i></a></li>
-          <li><a href="/matriculas/new" class="hide-on-med-and-down" style="font-weight: bold;">Matrículas</a></li>
+          <li><a href="/matriculas/new" class="hide-on-med-and-down" style="font-weight: bold;">Inscrição</a></li>
           <li><a href="/apoio" class="hide-on-med-and-down" style="font-weight: bold;">Apoio Psicológico</a></li>
           <li><a href="/trabalheconosco" class="hide-on-med-and-down" style="font-weight: bold;">Trabalhe Conosco</a></li>
           <li><a href="/contato" class="hide-on-med-and-down" style="font-weight: bold;">Contato</a></li>
@@ -104,14 +106,14 @@
         <% if !current_user.nil? and current_user.papel != 2%>
           <div class="user-view">
             <a "><span class="black-text name"><%=current_user.role.name%></span></a>
-            <a "><span class="black-text email">paulo.akira@gmail.com</span></a>
+            <a "><span class="black-text email"><%= current_user.role.email %></span></a>
           </div>
         <% end %>
       </li>
       <li><a href="/home">Home</a></li>
       <li><a href="/quemsomos">Quem somos?</a></li>
       <li><a data-target="dropdown-disciplinas-side" class="dropdown-trigger">Disciplinas<i class="material-icons right">arrow_drop_down</i></a></li>
-      <li><a href="/matriculas/new">Matrículas</a></li>
+      <li><a href="/matriculas/new">Inscrição</a></li>
       <li><a href="/apoio">Apoios Psicológicos</a></li>
       <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
       <li><a href="/contato">Contato</a></li>

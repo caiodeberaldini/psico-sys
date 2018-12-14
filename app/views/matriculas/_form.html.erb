@@ -108,6 +108,16 @@
         </div>
 
         <div class=field>
+            <%= form.label :egresso, 'Você ou algum familiar é egresso do sistema prisional?*' %><br />
+            <%= form.select(:egresso, [['Não', 'Não'], ['Sim', 'Sim']], {:prompt => "Selecione uma opção"}, {:class => 'browser-default'}) %>
+        </div>
+
+        <div class=field>
+            <%= form.label :refugiado, 'Você é refugiado político?*' %><br />
+            <%= form.select(:refugiado, [['Não', 'Não'], ['Sim', 'Sim']], {:prompt => "Selecione uma opção"}, {:class => 'browser-default'}) %>
+        </div>
+
+        <div class=field>
             <%= form.label :scholarship_need, 'Necessidade de Bolsa*' %><br />
             <%= form.select(:scholarship_need, [['Não Necessita de Bolsa', 0], ['Necessita de Bolsa', 1]], {:prompt => "Selecione uma opção"}, {:class => 'browser-default'}) %>
         </div>

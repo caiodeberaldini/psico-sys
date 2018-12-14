@@ -87,6 +87,15 @@
     <%= @student.numero_matricula %>
 </p>
 
+<p>
+    <strong>Criado em:</strong>
+    <%= @student.created_at.strftime("%d/%m/%Y - %Hh%Mmin") %>
+</p>
+
+<p>
+    <strong>Ultima edição:</strong>
+    <%= @student.updated_at.strftime("%d/%m/%Y - %Hh%Mmin") %>
+</p>
 
 <%= render partial: "users/user", locals: {role: @student} %>
 
