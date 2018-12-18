@@ -18,6 +18,8 @@ A seguir constam os dados referentes à matrícula:
 		Declaração de cor: <%= @matricula.declaracao_cor %> 
 		Sexo: <%= @matricula.declaracao_sexo %> 
 		Declaração do candidato de transexualidade: <%= @matricula.declaracao_trans %> 
+ 		É ou possui algum familiar egresso do sistema prisional: <%= @matricula.egresso %> </p>
+		É refugiado político: <%= @matricula.refugiado %> </p>
 	  Necessidade de bolsa: 
 		<% if @matricula.scholarship_need == 0 %>
 			Não necessita

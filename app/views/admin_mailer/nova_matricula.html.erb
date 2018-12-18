@@ -25,6 +25,8 @@
 	<p>  <b>Declaração de cor:</b> <%= @matricula.declaracao_cor %> </p>
 	<p>  <b>Sexo:</b> <%= @matricula.declaracao_sexo %> </p>
 	<p>  <b>Declaração do candidato de transexualidade:</b> <%= @matricula.declaracao_trans %> </p>
+	<p>  <b>É ou possui algum familiar egresso do sistema prisional:</b> <%= @matricula.egresso %> </p>
+	<p>  <b>É refugiado político:</b> <%= @matricula.refugiado %> </p>
 	<p>  <b>Necessidade de bolsa:</b> 
 		<% if @matricula.scholarship_need == 0 %>
 			Não necessita
