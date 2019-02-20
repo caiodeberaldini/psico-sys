@@ -47,7 +47,7 @@
 
 <p>
     <strong>Área de Atuação:</strong>
-    <%= Subject.find(@teacher.disciplina).name %>
+    <%= @teacher.disciplina %>
 </p>
 
 <%= render partial: "users/user", locals: {role: @teacher} %>
