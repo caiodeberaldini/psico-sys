@@ -77,7 +77,7 @@ class MaterialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def material_params
-      params.require(:material).permit(:description, :subjects_id, :tipo)
+      params.require(:material).permit(:description, :subject_id, :tipo)
     end
 
     def uploaded_file(incoming_file)

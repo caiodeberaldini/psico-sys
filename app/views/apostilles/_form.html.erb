@@ -22,8 +22,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :subjects_id, 'Disciplina' %>
-    <%= form.collection_select(:subjects_id, Subject.order(:name), :id, :name, {:prompt => 'Escolha uma Disciplina'}, {:class => 'browser-default'}) %>
+    <%= form.label :subject_id, 'Disciplina' %>
+    <%= form.collection_select(:subject_id, Subject.order(:name), :id, :name, {:prompt => 'Escolha uma Disciplina'}, {:class => 'browser-default'}) %>
   </div>
 
   <div class="actions">

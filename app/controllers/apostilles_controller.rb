@@ -78,7 +78,7 @@ class ApostillesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def apostille_params
-      params.require(:apostille).permit(:description, :subjects_id)
+      params.require(:apostille).permit(:description, :subject_id)
     end
 
     def uploaded_file(incoming_file)

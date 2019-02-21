@@ -12,7 +12,7 @@
             <tr>
                 <td><%= teacher.name %></td>
                 <td><%= teacher.address %></td>
-                <td><%= Subject.find(teacher.disciplina).name %></td>
+                <td><%= teacher.disciplina %></td>
 
                 <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">visibility</i>Visualizar</button>'.html_safe, teacher %>
                 <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">visibility</i>Visualizar</button>'.html_safe, teacher %></td>

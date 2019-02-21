@@ -13,7 +13,7 @@
     <% @apostilles.each do |apostille| %>
       <tr>
         <td><%= apostille.description %></td>
-        <td><%= Subject.find(apostille.subjects_id).name %></td>
+        <td><%= Subject.find(apostille.subject_id).name %></td>
 
         <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">file_download</i>Download</button>'.html_safe, apostille_download_path(apostille) %>
         <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">file_download</i>Download</button>'.html_safe, apostille_download_path(apostille) %></td>

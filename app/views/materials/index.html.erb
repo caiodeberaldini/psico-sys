@@ -13,7 +13,7 @@
     <% @materials.each do |material| %>
       <tr>
         <td><%= material.description %></td>
-        <td><%= Subject.find(material.subjects_id).name %></td>
+        <td><%= Subject.find(material.subject_id).name %></td>
 
         <td><%= link_to '<button class="btn green darken-3 hide-on-med-and-down"><i class="material-icons left">file_download</i>Download</button>'.html_safe, material_download_path(material) %>
         <%= link_to '<button class="btn-floating green darken-3 hide-on-large-only"><i class="material-icons left">file_download</i>Download</button>'.html_safe, material_download_path(material) %></td>
