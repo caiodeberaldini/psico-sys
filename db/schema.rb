@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(version: 20181214172317) do
     t.string "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "subject_id"
     t.string "filename"
     t.string "content_type"
     t.binary "data"
+    t.integer "subject_id"
     t.index ["subject_id"], name: "index_apostilles_on_subject_id"
   end
 
